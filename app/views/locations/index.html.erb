@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<div class="content-wrapper">
+    <h3 class="text-primary mb-4">Historial Incidentes</h3>
+    <div class="row mb-2">
+        <div class="col-lg-12">
+<table>
+    
+  <thead>
+    <tr>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Direccion</th>
+      <th>Descripcion</th>
+      <th>Nombre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.latitude %></td>
+        <td><%= location.longitude %></td>
+        <td><%= location.address %></td>
+        <td><%= location.description %></td>
+        <td><%= location.title %></td>
+        <td><%= link_to 'Mostrar', location, :class => 'btn btn-primary'%></td>
+        <td><%= link_to 'Editar', edit_location_path(location), :class => 'btn btn-warning' %></td>
+        <td><%= link_to 'Eliminar', location, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+      </tbody>
+            </div>
+        </div>
+    </div>
+ 
+    
+</table>
+
+<br>
+
+<p>
+<%= link_to 'Nuevo Incidente', new_location_path, class: 'btn btn-success' %>
+<p>
+    <strong>Mapa de Incidentes</strong>
+   
+  </p>
+<div style='width: 1000px;'>
+  <div id="map" style='width: 1000px; height: 400px;'></div>
+</div>
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
+

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class="content-wrapper">
+  <h3 class="text-primary mb-4">Funcionario</h3>
+  <div class="row mb-2">
+      <div class="col-lg-12">
+<p>
+  <strong>Nombre:</strong>
+  <%= @funcionario.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @funcionario.apellido %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @funcionario.celular %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @funcionario.telefono %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @funcionario.correo %>
+</p>
+<p>
+    <strong>Ci:</strong>
+    <%= @funcionario.ci %>
+  </p>
+  <p>
+      <strong>Funcion:</strong>
+      <%= @funcionario.tipo %>
+    </p>
+
+<%= link_to 'Editar', edit_funcionario_path(@funcionario) , :class => 'btn btn-warning'%> |
+<%= link_to 'Atras', funcionarios_path , :class => 'btn btn-info'%>

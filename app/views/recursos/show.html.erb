@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<div class="content-wrapper">
+  <h3 class="text-primary mb-4">Organizacion</h3>
+  <div class="row mb-2">
+      <div class="col-lg-12">
+<p>
+  <strong>Nombre:</strong>
+  <%= @recurso.nombre %>
+</p>
+
+<p>
+  <strong>Clase:</strong>
+  <%= @recurso.clase %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @recurso.tipo %>
+</p>
+
+<p>
+  <strong>Matricula:</strong>
+  <%= @recurso.matricula %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @recurso.estado %>
+</p>
+
+<%= link_to 'Editar', edit_recurso_path(@recurso), :class => 'btn btn-success' %> |
+<%= link_to 'Atras', recursos_path, :class => 'btn btn-info' %>

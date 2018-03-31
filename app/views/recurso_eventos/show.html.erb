@@ -1,0 +1,98 @@
+<p id="notice"><%= notice %></p>
+<div class="content-wrapper">
+    <h3 class="text-primary mb-4">Recursos</h3>
+    <div class="row mb-2">
+        <div class="col-lg-12">
+<p>
+    <div class="form-control p-input">
+  <strong>Solicitado:</strong>
+  <%= @recurso_evento.solicitado %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Fechapedido:</strong>
+  <%= @recurso_evento.fechapedido%>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Clase:</strong>
+  <%= @recurso_evento.clase %>
+</div>
+</p>
+      
+<p>
+    <div class="form-control p-input">
+  <strong>Tipo:</strong>
+  <%= @recurso_evento.tipo %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Fechallegada:</strong>
+  <%= @recurso_evento.fechallegada %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Institucion:</strong>
+  <%= @recurso_evento.institucion %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Matricula:</strong>
+  <%= @recurso_evento.matricula %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Numeropersonas:</strong>
+  <%= @recurso_evento.numeropersonas %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Estado:</strong>
+  <%= @recurso_evento.estado %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Asignadoa:</strong>
+  <%= @recurso_evento.asignadoa %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Desmovilizadopor:</strong>
+  <%= @recurso_evento.desmovilizadopor %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Fechadesmovilizacion:</strong>
+  <%= @recurso_evento.fechadesmovilizacion %>
+    </div>
+</p>
+
+<p>
+    <div class="form-control p-input">
+  <strong>Observaciones:</strong>
+  <%= @recurso_evento.observaciones %>
+    </div>
+</p>
+
+<%= link_to 'Editar', edit_recurso_evento_path(@recurso_evento)  ,class: "btn btn-success"  %> |
+<%= link_to 'Atras', recurso_eventos_path,  class: "btn btn-info"   %>
