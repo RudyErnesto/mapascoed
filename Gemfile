@@ -9,7 +9,9 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 gem 'sqlite3', group: [:development, :test]
-gem 'pg', group: [:production]
+group :production do
+gem 'pg', '~> 0.18'
+end
 gem 'geocoder'
 gem 'gmaps4rails'
 # Use Puma as the app server
