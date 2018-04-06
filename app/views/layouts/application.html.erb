@@ -24,30 +24,33 @@
   </head>
 
   <body>
+  
       <div class=" container-scroller">
           <!--Navbar-->
-          <nav class="navbar bg-primary-gradient col-lg-12 col-12 p-0 fixed-top navbar-inverse d-flex flex-row">
-              <div class="bg-white text-center navbar-brand-wrapper">
-                  <a class="navbar-brand brand-logo" href="/"><img src="/assets/logo_star_black.png" /></a>
-                  <a class="navbar-brand brand-logo-mini" href="/"><img src="/assets/logo_star_mini.jpg" alt=""></a>
-              </div>
-              <div class="navbar-menu-wrapper d-flex align-items-center">
-                  <button class="navbar-toggler navbar-toggler hidden-md-down align-self-center mr-3" type="button" data-toggle="minimize">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
-                      <li class="nav-item">
-                          <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="/assets/face.jpg" alt=""></a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
-                      </li>
-                  </ul>
-                  <button class="navbar-toggler navbar-toggler-right hidden-lg-up align-self-center" type="button" data-toggle="offcanvas">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-              </div>
-          </nav>
+     <div class="navbar navbar-inverse navbar-fixed-top" style="background:#0C0C0C"role="navigation ">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Zooe</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li>  <%= link_to 'Mascotas', publico_mascota_path %></li>
+          <li>  <%= link_to 'Noticias', public_noticia_path %></li>
+          <li><%= link_to('Editar Perfil', edit_user_registration_path) %></li> 
+          <li><%= link_to('Salir', destroy_user_session_path, 
+            :method => :delete) %></li>
+        <% else %>
+          <li>  <%= link_to 'Mascotas', publico_mascota_path %></li>
+          <li>  <%= link_to 'Noticias', public_noticia_path %></li>
+          <li>  <%= link_to 'Veterinaria', veterinaria_path %></li>
+          <li ><%= link_to('Registrarse', new_user_registration_path) %></li>
+          <li ><%= link_to('Login', new_user_session_path)  %></li>
+
+        <% end %>
+        </ul>
+      </div>
+   
           <!--End navbar-->
           
           <div class="container-fluid">
