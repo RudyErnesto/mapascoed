@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406163344) do
+ActiveRecord::Schema.define(version: 20180411185913) do
 
   create_table "funcionarios", force: :cascade do |t|
     t.string "nombre"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20180406163344) do
     t.text "evanicial"
     t.string "ciresponsable"
     t.text "resumenacciones"
+    t.datetime "fechapreparacion"
+    t.text "evaluacion"
+    t.text "objetivos"
+    t.string "ubicacionpc"
+    t.string "ubicacionae"
+    t.text "rutadesalida"
+    t.text "rutaingreso"
+    t.text "mensajedeseguridad"
+    t.string "comandante"
   end
 
   create_table "organizacions", force: :cascade do |t|
