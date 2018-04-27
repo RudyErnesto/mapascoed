@@ -1,4 +1,11 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Editar Cuenta <%= resource_name.to_s.humanize %></h2>
+ <div class="content-wrapper", style='width: 100%';>
+    <h3 class="text-primary mb-4">Cuenta</h3>
+    <div class="row mb-2", style='width: 100%;'>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-block", style='width: 800px;'>
+                    <h4 class="card-title mb-4">Cuenta</h4>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -36,7 +43,7 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Cancelar mi cuenta</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 

@@ -1,0 +1,1247 @@
+<%= form_with(model: institucion, local: true) do |form| %>
+  <% if institucion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(institucion.errors.count, "error") %> prohibited this institucion from being saved:</h2>
+
+      <ul>
+      <% institucion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="content-wrapper", style='width: 100%';>
+    <h3 class="text-primary mb-4">Hoja de institucion</h3>
+    <div class="row mb-2", style='width: 100%;'>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-block", style='width: 800px;'>
+                    <h4 class="card-title mb-4">Formulario Instituciones</h4>
+                    <form class="forms-sample" >
+                    <h5>Datos Generales</h5>
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :institucion_nombre , class:'form-control p-input'%>
+  </div>
+<table class="table">
+  <tbody>
+    <tr>
+      
+      <td><div class="field">
+    <%= form.label :persona_encargada %>
+    <%= form.text_field :personaencargada, id: :institucion_personaencargada , class:'form-control p-input'%>
+  </div>
+</td>
+      <td><div class="field">
+    <%= form.label :cargo %>
+    <%= form.text_field :cargo, id: :institucion_cargo , class:'form-control p-input'%>
+  </div></td>
+   
+    </tr>
+    <tr>
+      <td><div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :institucion_direccion , class:'form-control p-input'%>
+  </div></td>
+    
+    </tr>
+    <tr>
+      <td><div class="field">
+    <%= form.label :departamento %>
+    <%= form.text_field :departamento, id: :institucion_departamento , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :municipio %>
+    <%= form.text_field :municipio, id: :institucion_municipio , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :localidad %>
+    <%= form.text_field :localidad, id: :institucion_localidad , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+     
+      <td><div class="field">
+    <%= form.label :telefono %>
+    <%= form.text_field :telefono, id: :institucion_telefono , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :fax %>
+    <%= form.text_field :fax, id: :institucion_fax , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.label :pagina_web %>
+    <%= form.text_field :paginweb, id: :institucion_paginweb , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr><td>
+     <div class="field">
+    <%= form.label :nombre_del_contacto %>
+    <%= form.text_field :nombrecontacto, id: :institucion_nombrecontacto , class:'form-control p-input'%>
+  </div>
+    </td></tr>
+     
+  <tr>
+    
+      <td> <div class="field">
+    <%= form.label :cargo %>
+    <%= form.text_field :cargi, id: :institucion_cargi , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.label :tiempo_en_el_cargo %>
+    <%= form.text_field :tiempoencargo, id: :institucion_tiempoencargo , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+<tr>
+<td><div class="field">
+    <%= form.label :direccion_si_es_diferente_a_la_institucion %>
+    <%= form.text_field :direccion, id: :institucion_direccion , class:'form-control p-input'%>
+  </div></td>
+  </tr>
+  <tr>
+      
+      <td> <div class="field">
+    <%= form.label :telefono %>
+    <%= form.text_field :telefono, id: :institucion_telefono , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :celular %>
+    <%= form.text_field :celular, id: :institucion_celular , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :institucion_email, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+  <h5>Como se clasifica la institucion?</h5>
+  </thead>
+  <tbody>
+    <tr>
+     
+      <td><div class="field">
+    <%= form.label :institucion_publica %>
+    <%= form.text_field :institucionpublica, id: :institucion_institucionpublica , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :detalle %>
+    <%= form.text_area :detalle, id: :institucion_detalle , class:'form-control p-input'%>
+  </div></td>
+     
+    </tr>
+    <tr>
+    
+      <td><div class="field">
+    <%= form.label :institucion_privada %>
+    <%= form.check_box :institucionprivada, id: :institucion_institucionprivada, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :detalles %>
+    <%= form.text_area :detalleprivado, id: :institucion_detalleprivado , class:'form-control p-input'%>
+  </div></td>
+     
+    </tr>
+    <tr>
+      
+      <td> <div class="field">
+    <%= form.label :sin_fines_de_lucro %>
+    <%= form.text_field :sinfinesdelucro, id: :institucion_sinfinesdelucro , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :detalles %>
+    <%= form.text_area :detallesinfinesdelucro, id: :institucion_detallesinfinesdelucro , class:'form-control p-input'%>
+  </div>
+</td>
+      <tr>
+      
+      <td> <div class="field">
+    <%= form.label :grupo_voluntario %>
+    <%= form.check_box :grupovoluntario, id: :institucion_grupovoluntario , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :detalle %>
+    <%= form.text_area :detalle, id: :institucion_detalle , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+    <td>
+    <div class="field">
+    <%= form.label :coe %>
+    <%= form.check_box :coe, id: :institucion_coe , class:'form-control p-input'%>
+  </div>
+    </td>
+    </tr>
+    <tr>
+      
+      <td><div class="field">
+    <%= form.label :coe_nacional %>
+    <%= form.check_box :coenacional, id: :institucion_coenacional, class:'form-control p-input' %>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :coe_departamental %>
+    <%= form.check_box :coedepartalemtal, id: :institucion_coedepartalemtal , class:'form-control p-input'%>
+  </div>
+</td>
+      <td><div class="field">
+    <%= form.label :coe_municipal %>
+    <%= form.check_box :coemunicipal, id: :institucion_coemunicipal , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    
+    <tr>
+      <td> <div class="field">
+    <%= form.label :mesassectoriales %>
+    <%= form.check_box :mesassectoriales, id: :institucion_mesassectoriales, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+
+    <tr>
+      
+      <td> <div class="field">
+    <%= form.label :salud %>
+    <%= form.check_box :salud, id: :institucion_salud , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :educacion %>
+    <%= form.check_box :educacion, id: :institucion_educacion , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+     
+      <td> <div class="field">
+    <%= form.label :agua_y_saneamiento %>
+    <%= form.check_box :aguaysaneamiento, id: :institucion_aguaysaneamiento , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :seguridad_alimentaria %>
+    <%= form.check_box :seguridadalimentaria, id: :institucion_seguridadalimentaria, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+
+    <tr>
+     
+      <td><div class="field">
+    <%= form.label :gobernabilidad__y_proteccion %>
+    <%= form.check_box :gobernabilidadproteccion, id: :institucion_gobernabilidadproteccion , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :albergues %>
+    <%= form.check_box :albergues, id: :institucion_albergues , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      <td>  <div class="field">
+    <%= form.label :recuperacion %>
+    <%= form.check_box :recuperacion, id: :institucion_recuperacion , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      
+      <td> <div class="field">
+    <%= form.label :comisiones_departales %>
+    <%= form.check_box :comisionesdepartales, id: :institucion_comisionesdepartales, class:'form-control p-input' %>
+  </div></td>
+      <td> 
+  <div class="field">
+    <%= form.label :detalle_comisiones %>
+    <%= form.text_area :detallecomisiones, id: :institucion_detallecomisiones , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+
+<tr>
+      
+      <td><div class="field">
+    <%= form.label :comisiones_municipales_COEM %>
+    <%= form.check_box :comisionesmunicipalesCOEM, id: :institucion_comisionesmunicipalesCOEM, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :detalles_COEM %>
+    <%= form.text_area :detallesCOEM, id: :institucion_detallesCOEM , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+
+    <tr>
+      
+      <td> <div class="field">
+    <%= form.label :DGR %>
+    <%= form.check_box :dgr, id: :institucion_dgr , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :UGR %>
+    <%= form.check_box :ugr, id: :institucion_ugr , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :UNETE %>
+    <%= form.check_box :unete, id: :institucion_unete, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+
+    <tr>
+    
+      <td>
+  <div class="field">
+    <%= form.label :Grupo_de_socios_para_el_desarrollo_de_Bolivia_GRUS %>
+    <%= form.check_box :grus, id: :institucion_grus , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :consorcio_de_ONG %>
+    <%= form.check_box :consorciodeong, id: :institucion_consorciodeong , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :observatorios %>
+    <%= form.check_box :observatorios, id: :institucion_observatorios, class:'form-control p-input' %>
+  </div></td>
+  <td><div class="field">
+    <%= form.label :detalles_observatorios %>
+    <%= form.text_area :detallesobservatorio, id: :institucion_detallesobservatorio , class:'form-control p-input'%>
+  </div>
+</td>
+    </tr>
+
+    <tr>
+     
+      <td> <div class="field">
+    <%= form.label :local %>
+    <%= form.check_box :local, id: :institucion_local , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :detalles_local %>
+    <%= form.text_area :detalleslocal, id: :institucion_detalleslocal, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+    <tr>
+      <td>  <div class="field">
+    <%= form.label :otros %>
+    <%= form.check_box :otros, id: :institucion_otros , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.label :otros_detalle %>
+    <%= form.text_area :otrosdetalle, id: :institucion_otrosdetalle , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      
+      <td><div class="field">
+    <%= form.label :gestios_de_riesgos %>
+    <%= form.check_box :mandatogestionriesgo, id: :institucion_mandatogestionriesgo , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :seguridad %>
+    <%= form.check_box :mandatoseguridad, id: :institucion_mandatoseguridad , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :otro %>
+    <%= form.check_box :mandatootro, id: :institucion_mandatootro , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+  </tbody>
+</table>
+ 
+  <div class="field">
+    <%= form.label :Explicar %>
+    <%= form.text_area :mandatodetalle, id: :institucion_mandatodetalle , class:'form-control p-input'%>
+  </div>
+
+  <div class="field">
+    <%= form.label :especialidades_en_primera_respuesta %>
+    <%= form.text_area :especialidadesmandato, id: :institucion_especialidadesmandato , class:'form-control p-input'%>
+  </div>
+
+
+  <table class="table">
+  <thead>
+    
+      <h5>Que servicios brinda en primera respuesta</h5>
+ 
+    
+  </thead>
+  <tbody>
+    <tr>
+    
+      <td>  <div class="field">
+    <%= form.label :Accesibilidad_y_transporte %>
+    <%= form.check_box :serviciotransporte, id: :institucion_serviciotransporte , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :busqueda_con_perros %>
+    <%= form.check_box :serviciobusquedaperros, id: :institucion_serviciobusquedaperros , class:'form-control p-input'%>
+  </div></td>
+   
+    </tr>
+    <tr>
+     
+      <td><div class="field">
+    <%= form.label :telecomunicaciones %>
+    <%= form.check_box :serviciotelecomunicaciones, id: :institucion_serviciotelecomunicaciones , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :extincion_de_incendios_urbanos %>
+    <%= form.check_box :serviciosincendiosurbanos, id: :institucion_serviciosincendiosurbanos , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      <td><div class="field">
+    <%= form.label :evaluacion_de_daños %>
+    <%= form.check_box :servicioevaluacion, id: :institucion_servicioevaluacion , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :extincion_de_incendios_forestales %>
+    <%= form.check_box :servicioincendioforestal, id: :institucion_servicioincendioforestal , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+  <tr>
+      
+      <td> <div class="field">
+    <%= form.label :salud_y_saneamiento %>
+    <%= form.check_box :serviciosaludysaneamiento, id: :institucion_serviciosaludysaneamiento , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :manejo_de_materiales_peligrosos %>
+    <%= form.check_box :serviciomanejomateriales, id: :institucion_serviciomanejomateriales , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      
+      <td>
+  <div class="field">
+    <%= form.label :Busqueda_y_rescate_en_superficies %>
+    <%= form.check_box :serviciobusquedayrescate, id: :institucion_serviciobusquedayrescate , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :servicios_publicos %>
+    <%= form.check_box :serviciospublicos, id: :institucion_serviciospublicos , class:'form-control p-input'%>
+  </div></td>
+      
+    </tr>
+    <tr>
+      
+      <td><div class="field">
+    <%= form.label :busqueda_y_rescate_en_altura %>
+    <%= form.check_box :serviciobusquedayrescateenaltura, id: :institucion_serviciobusquedayrescateenaltura, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :seguridad %>
+    <%= form.check_box :servicioseguridad, id: :institucion_servicioseguridad , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      
+  
+      <td><div class="field">
+    <%= form.label :salvamento_acuatico %>
+    <%= form.check_box :salvamientoacuatico, id: :institucion_salvamientoacuatico, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :manejo_general %>
+    <%= form.check_box :manejogeneral, id: :institucion_manejogeneral , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+  </tbody>
+  
+</table>
+ <div class="field">
+    <%= form.label :otros %>
+    <%= form.text_area :serviciodetalle, id: :institucion_serviciodetalle , class:'form-control p-input'%>
+  </div>
+
+  <table class="table">
+  <thead>
+    
+      <th scope="col">En que tipo de eventos adversos actua en primera respuesta</th>
+  
+  </thead>
+  <tbody>
+    <tr>
+      <td> <div class="field">
+    <%= form.label :naturales %>
+    <%= form.check_box :respuestanaturales, id: :institucion_respuestanaturales , class:'form-control p-input'%>
+  </div></td>
+      
+    </tr>
+    <tr>
+      <td><div class="field">
+    <%= form.label :hidro_meteorologicas %>
+    <%= form.check_box :respuestahidrometeorologicas, id: :institucion_respuestahidrometeorologicas , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.label :inundaciones %>
+    <%= form.check_box :respuestainundaciones, id: :institucion_respuestainundaciones , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :riadas %>
+    <%= form.check_box :respuestariadas, id: :institucion_respuestariadas , class:'form-control p-input'%>
+  </div></td>
+  <td> <div class="field">
+    <%= form.label :vientos_fuertes %>
+    <%= form.check_box :respuestavientosfuertes, id: :institucion_respuestavientosfuertes, class:'form-control p-input' %>
+  </div></td>
+  <td> <div class="field">
+    <%= form.label :geologicas %>
+    <%= form.check_box :respuestageologicas, id: :institucion_respuestageologicas , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      <td> <div class="field">
+    <%= form.label :deslizamientos %>
+    <%= form.check_box :respuestadeslizamiento, id: :institucion_respuestadeslizamiento, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :derrumbes %>
+    <%= form.check_box :respuestaderrumber, id: :institucion_respuestaderrumber, class:'form-control p-input' %>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.label :sismos %>
+    <%= form.check_box :respuestasismos, id: :institucion_respuestasismos, class:'form-control p-input' %>
+  </div></td>
+  <td> <div class="field">
+    <%= form.label :otros %>
+    <%= form.check_box :respuestaotros, id: :institucion_respuestaotros, class:'form-control p-input' %>
+  </div></td>
+  <td>
+  <div class="field">
+    <%= form.label :detalle %>
+    <%= form.text_area :respuestadetalle, id: :institucion_respuestadetalle , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+     <tr>
+      <td scope="row">
+  <div class="field">
+    <%= form.label :socio_natural %>
+    <%= form.check_box :socionatural, id: :institucion_socionatural, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+    <%= form.label :ambientales %>
+    <%= form.check_box :socioambiental, id: :institucion_socioambiental, class:'form-control p-input' %>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :incendios_forestales %>
+    <%= form.check_box :socioincendio, id: :institucion_socioincendio, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :otro %>
+    <%= form.check_box :sociootro, id: :institucion_sociootro, class:'form-control p-input' %>
+  </div></td>
+  <td><div class="field">
+    <%= form.label :detalle %>
+    <%= form.text_area :sociodetalle, id: :institucion_sociodetalle, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+     <tr>
+      <th scope="row"><div class="field">
+    <%= form.label :antropicas %>
+    <%= form.check_box :antropicas, id: :institucion_antropicas , class:'form-control p-input'%>
+  </div></th>
+    </tr>
+     <tr>
+  
+      <td><div class="field">
+    <%= form.label :incendios_urbanos %>
+    <%= form.check_box :antropicasincendios, id: :institucion_antropicasincendios , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.label :otros %>
+    <%= form.check_box :antropicasotros, id: :institucion_antropicasotros, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+     <tr>
+      <td> <div class="field">
+    <%= form.label :otros_socios %>
+    <%= form.check_box :otrossocios, id: :institucion_otrossocios , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :detalles %>
+    <%= form.text_area :otrosdetallessocios, id: :institucion_otrosdetallessocios , class:'form-control p-input'%>
+  </div>
+</td>
+    </tr>
+  </tbody>
+</table>
+<h5>que eventos son a los que da primera respuesta frecuentemente</h5>
+  <div class="field">
+    <%= form.label :eventosfrecuentes %>
+    <%= form.text_area :eventosfrecuentes, id: :institucion_eventosfrecuentes, class:'form-control p-input' %>
+  </div>
+<h5>Cuales son sus capacidades</h5>
+<table class="table">
+  <thead>
+    <h5>posee planes o protocolos de accion</h5>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">plan de contingencia</th>
+      <td><div class="field">
+    <%= form.label :plandecontingencia %>
+    <%= form.check_box :plandecontingencia, id: :institucion_plandecontingencia , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :planencasosi %>
+    <%= form.check_box :planencasosi, id: :institucion_planencasosi , class:'form-control p-input'%>
+  </div></td>
+      
+    </tr>
+    <tr>
+
+      <td>
+  <div class="field">
+    <%= form.label :tareasprotocolo %>
+    <%= form.text_area :tareasprotocolo, id: :institucion_tareasprotocolo , class:'form-control p-input'%>
+  </div></td>
+  <td>
+   <div class="field">
+    <%= form.label :porcentajerespuesta %>
+    <%= form.check_box :porcentajerespuesta, id: :institucion_porcentajerespuesta , class:'form-control p-input'%>
+  </div>
+  </td>
+
+    </tr>
+    <tr>
+      <td> <div class="field">
+    <%= form.label :plan_de_emergencia %>
+    <%= form.check_box :plandeemergencia, id: :institucion_plandeemergencia , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :encasosiemergencia %>
+    <%= form.check_box :encasosiemergencia, id: :institucion_encasosiemergencia , class:'form-control p-input'%>
+  </div></td>
+  
+    </tr>
+      <tr>
+      <td>  <div class="field">
+    <%= form.label :tareasemergencia %>
+    <%= form.text_area :tareasemergencia, id: :institucion_tareasemergencia , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+       <tr>
+      <td>  <div class="field">
+    <%= form.label :protocolodeaccion %>
+    <%= form.check_box :protocolodeaccion, id: :institucion_protocolodeaccion , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :encasosiprotocolo %>
+    <%= form.check_box :encasosiprotocolo, id: :institucion_encasosiprotocolo , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr><td>  <div class="field">
+    <%= form.label :areaflujo %>
+    <%= form.check_box :areaflujo, id: :institucion_areaflujo, class:'form-control p-input' %>
+  </div>
+  </td>
+    <td>  <div class="field">
+    <%= form.label :arealogistica %>
+    <%= form.check_box :arealogistica, id: :institucion_arealogistica, class:'form-control p-input' %>
+  </div>
+</td>
+<td>
+<div class="field">
+    <%= form.label :areadocumentacion %>
+    <%= form.check_box :areadocumentacion, id: :institucion_areadocumentacion , class:'form-control p-input'%>
+  </div>
+</td>
+  </tr>
+   <tr>
+      <td>  <div class="field">
+    <%= form.label :areacomunicaciones %>
+    <%= form.check_box :areacomunicaciones, id: :institucion_areacomunicaciones , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :areatransporte %>
+    <%= form.check_box :areatransporte, id: :institucion_areatransporte , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :areaevaluaciondemergencia %>
+    <%= form.check_box :areaevaluaciondemergencia, id: :institucion_areaevaluaciondemergencia , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+    <%= form.label :areaemergenciamedica %>
+    <%= form.check_box :areaemergenciamedica, id: :institucion_areaemergenciamedica , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :areamovilizacion %>
+    <%= form.check_box :areamovilizacion, id: :institucion_areamovilizacion , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :areaoperaciones %>
+    <%= form.text_field :areaoperaciones, id: :institucion_areaoperaciones , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+    <%= form.label :areaseguridad %>
+    <%= form.check_box :areaseguridad, id: :institucion_areaseguridad , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.label :areaotros %>
+    <%= form.check_box :areaotros, id: :institucion_areaotros , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :areadetalle %>
+    <%= form.text_area :areadetalle, id: :institucion_areadetalle , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+    <%= form.label :activacionesautomaticas %>
+    <%= form.check_box :activacionesautomaticas, id: :institucion_activacionesautomaticas , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+    <%= form.label :medioradio %>
+    <%= form.check_box :medioradio, id: :institucion_medioradio , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :mediotv %>
+    <%= form.check_box :mediotv, id: :institucion_mediotv , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.label :mediofrecuencia %>
+    <%= form.check_box :mediofrecuencia, id: :institucion_mediofrecuencia , class:'form-control p-input'%>
+  </div></td>
+  <td><div class="field">
+    <%= form.label :mediollamadas %>
+    <%= form.check_box :mediollamadas, id: :institucion_mediollamadas , class:'form-control p-input'%>
+  </div></td>
+  <td><div class="field">
+    <%= form.label :otros %>
+    <%= form.check_box :otros, id: :institucion_otros, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+     <tr>
+      <td> <div class="field">
+    <%= form.label :mediosdetalles %>
+    <%= form.text_area :mediosdetalles, id: :institucion_mediosdetalles, class:'form-control p-input' %>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.label :requerimientosuperios %>
+    <%= form.check_box :requerimientosuperios, id: :institucion_requerimientosuperios, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :requerimientosuperiosdetalle %>
+    <%= form.text_area :requerimientosuperiosdetalle, id: :institucion_requerimientosuperiosdetalle, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+    <%= form.label :requerimientootrodetalle %>
+    <%= form.text_area :requerimientootrodetalle, id: :institucion_requerimientootrodetalle, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :observaciones %>
+    <%= form.text_area :observaciones, id: :institucion_observaciones , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+    <%= form.label :situacionesactual %>
+    <%= form.check_box :situacionesactual, id: :institucion_situacionesactual, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :trabajosiniciales %>
+    <%= form.check_box :trabajosiniciales, id: :institucion_trabajosiniciales , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :caracteristicasestructurales %>
+    <%= form.check_box :caracteristicasestructurales, id: :institucion_caracteristicasestructurales , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+    <%= form.label :consideracionespeciales %>
+    <%= form.check_box :consideracionespeciales, id: :institucion_consideracionespeciales, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :estadotiempo %>
+    <%= form.check_box :estadotiempo, id: :institucion_estadotiempo, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :mapasderiesgo %>
+    <%= form.check_box :mapasderiesgo, id: :institucion_mapasderiesgo, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+    <%= form.label :seguridadyproteccion %>
+    <%= form.check_box :seguridadyproteccion, id: :institucion_seguridadyproteccion, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :planosdellugar %>
+    <%= form.check_box :planosdellugar, id: :institucion_planosdellugar, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.label :evacuaionemergencia %>
+    <%= form.check_box :evacuaionemergencia, id: :institucion_evacuaionemergencia , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+    <%= form.label :estadisticas %>
+    <%= form.check_box :estadisticas, id: :institucion_estadisticas, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :temasdesalud %>
+    <%= form.check_box :temasdesalud, id: :institucion_temasdesalud , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.label :accionotro %>
+    <%= form.check_box :accionotro, id: :institucion_accionotro , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <h5>estan capacitados en sistema de comando de incedentes</h5>
+     <tr>
+      <td>
+  <div class="field">
+    <%= form.label :acciondetalle %>
+    <%= form.text_area :acciondetalle, id: :institucion_acciondetalle, class:'form-control p-input' %>
+  </div></td>
+      <td>
+
+  <div class="field">
+    <%= form.label :capacitadosincidentes %>
+    <%= form.check_box :capacitadosincidentes, id: :institucion_capacitadosincidentes, class:'form-control p-input' %>
+  </div>
+</td>
+      <td>  <div class="field">
+    <%= form.label :capacitadosobservaciones %>
+    <%= form.text_area :capacitadosobservaciones, id: :institucion_capacitadosobservaciones, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+  </tbody>
+</table>
+
+  <div class="field">
+    <%= form.label :coberturageogracia %>
+    <%= form.text_area :coberturageogracia, id: :institucion_coberturageogracia , class:'form-control p-input'%>
+  </div>
+
+  <div class="field">
+    <%= form.label :brazosoperativosareas %>
+    <%= form.text_area :brazosoperativosareas, id: :institucion_brazosoperativosareas , class:'form-control p-input'%>
+  </div>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Personal</th>
+      <th scope="col">SI/NO</th>
+      <th scope="col">Numero de Personas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Administrativo</td>
+      <td>  <div class="field">
+    <%= form.check_box :recursoadministrativo, id: :institucion_recursoadministrativo , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.number_field :recursoadministrativo, id: :institucion_recursoadministrativo, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Operativo Total</td>
+      <td>  <div class="field">
+    <%= form.check_box :recursosoperativo, id: :institucion_recursosoperativo , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.number_field :recursosoperativopersonas, id: :institucion_recursosoperativopersonas, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Operativo Activo</td>
+      <td>  <div class="field">
+    <%= form.check_box :operativoactivo, id: :institucion_operativoactivo , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.number_field :operativoactivopersonas, id: :institucion_operativoactivopersonas , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">4</th>
+      <td>Reserva</td>
+      <td> <div class="field">
+
+    <%= form.check_box :pasivosenreserva, id: :institucion_pasivosenreserva , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.number_field :pasivosenreservapersonas, id: :institucion_pasivosenreservapersonas , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">5</th>
+      <td>Primera Respuesta a incidentes con materias peligrosas</td>
+      <td>  <div class="field">
+    <%= form.check_box :primap, id: :institucion_primap , class:'form-control p-input'%>
+  </div>
+</td>
+      <td>  <div class="field">
+    <%= form.number_field :primapersonas, id: :institucion_primapersonas , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">6</th>
+      <td>Rescate en Estructuras Copalsadas Nivel Liviano(CRECL)</td>
+      <td> <div class="field">
+    <%= form.check_box :crecl, id: :institucion_crecl, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.number_field :creclpersonas, id: :institucion_creclpersonas , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">7</th>
+      <td>Busqueda y rescate en estructuras colapsadas(BREC)</td>
+      <td>
+  <div class="field">
+    <%= form.check_box :brec, id: :institucion_brec, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.number_field :brecpersonas, id: :institucion_brecpersonas , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">8</th>
+      <td>Busqueda y Rescate Acuatica</td>
+      <td>
+  <div class="field">
+    <%= form.check_box :especidalidadrescateactuatico, id: :institucion_especidalidadrescateactuatico , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.number_field :especialidadrescatepersonas, id: :institucion_especialidadrescatepersonas , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">9</th>
+      <td>Manejador de Perros</td>
+      <td> <div class="field">
+    <%= form.check_box :manejadorperros, id: :institucion_manejadorperros , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.number_field :manejadorperrospersona, id: :institucion_manejadorperrospersona, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">10</th>
+      <td>Sistema de comando de incedentes (CBSCI)</td>
+      <td>
+  <div class="field">
+    <%= form.check_box :cbsci, id: :institucion_cbsci, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.number_field :cbscipersonas, id: :institucion_cbscipersonas, class:'form-control p-input' %>
+  </div>
+</td>
+    </tr>
+      <tr>
+      <th scope="row">11</th>
+      <td>Extincion de incendios urbanos</td>
+      <td><div class="field">
+    <%= form.check_box :extincionincendiosurbanos, id: :institucion_extincionincendiosurbanos , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.number_field :extincionserviciosurbanospersonas, id: :institucion_extincionserviciosurbanospersonas, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">12</th>
+      <td>Incendios Forestales</td>
+      <td> <div class="field">
+    <%= form.check_box :incendiosforestales, id: :institucion_incendiosforestales, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.number_field :incendiosforestalespersonas, id: :institucion_incendiosforestalespersonas, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">13</th>
+      <td>Medicos</td>
+      <td>
+
+  <div class="field">
+    <%= form.check_box :medicos, id: :institucion_medicos , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+
+    <%= form.number_field :numeromedicos, id: :institucion_numeromedicos, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">14</th>
+      <td>Soporte basico de vida (SBV)</td>
+      <td>  <div class="field">
+    <%= form.check_box :sbv, id: :institucion_sbv, class:'form-control p-input' %>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.number_field :sbv, id: :institucion_sbv, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">15</th>
+      <td>Asistente de primeros auxilios avanzado (APAA)</td>
+      <td><div class="field">
+    <%= form.check_box :appa, id: :institucion_appa, class:'form-control p-input' %>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.number_field :appapersonas, id: :institucion_appapersonas, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">16</th>
+      <td>Instrutores CPI</td>
+      <td>  <div class="field">
+    <%= form.check_box :cpi, id: :institucion_cpi, class:'form-control p-input' %>
+  </div></td>
+      <td><div class="field">
+    <%= form.number_field :cpipersonas, id: :institucion_cpipersonas, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">17</th>
+      <td>Comunicaciones</td>
+      <td>  
+  <div class="field">
+    <%= form.check_box :especilidadcomunicaciones, id: :institucion_especilidadcomunicaciones, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+
+    <%= form.number_field :especidalidadcomunicacionespersonas, id: :institucion_especidalidadcomunicacionespersonas, class:'form-control p-input' %>
+  </div>
+</td>
+    </tr>
+      <tr>
+      <th scope="row">18</th>
+      <td>Logistica</td>
+      <td>  <div class="field">
+
+    <%= form.check_box :especialidadlogistica, id: :institucion_especialidadlogistica, class:'form-control p-input' %>
+  </div></td>
+      <td>
+  <div class="field">
+ 
+    <%= form.number_field :especialidadlogicasticapersonas, id: :institucion_especialidadlogicasticapersonas, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+  </tbody>
+</table>
+  <h5>Equipamiento</h5>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tipo de vehiculos disponibles</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Capacidad de Personas</th>
+      <th scope="col">Observaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th scope="row">Ambulancias</th>
+      <td>  <div class="field">
+    <%= form.number_field :ambulanciascantidad, id: :institucion_ambulanciascantidad, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.check_box :ambulanciasestado, id: :institucion_ambulanciasestado, class:'form-control p-input' %>
+  </div></td>
+      <td><div class="field">
+    <%= form.number_field :ambulanciascapacidadpersonas, id: :institucion_ambulanciascapacidadpersonas, class:'form-control p-input' %>
+  </div></td>
+  <td>  <div class="field">
+    <%= form.text_area :ambulanciasobservaciones, id: :institucion_ambulanciasobservaciones, class:'form-control p-input' %>
+  </div></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Transporte Liviano</th>
+      <td> <div class="field">
+    <%= form.number_field :transliviano, id: :institucion_transliviano, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.check_box :translivianoestado, id: :institucion_translivianoestado, class:'form-control p-input' %>
+  </div>
+</td>
+      <td>
+
+  <div class="field">
+    <%= form.number_field :translivianopersonas, id: :institucion_translivianopersonas, class:'form-control p-input' %>
+  </div></td>
+  <td> <div class="field">
+    <%= form.text_area :translivianobservaciones, id: :institucion_translivianobservaciones , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Transporte Pesado</th>
+      <td>
+  <div class="field">
+    <%= form.number_field :transpesado, id: :institucion_transpesado , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.check_box :transpesadoestado, id: :institucion_transpesadoestado , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.number_field :transpesadopersonas, id: :institucion_transpesadopersonas , class:'form-control p-input'%>
+  </div></td>
+  <td> <div class="field">
+    <%= form.text_area :transpesadosobservaciones, id: :institucion_transpesadosobservaciones, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+     <tr>
+      <th scope="row">Patrullas</th>
+      <td>
+  <div class="field">
+
+    <%= form.number_field :patrullas, id: :institucion_patrullas , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+
+    <%= form.check_box :patrullasestado, id: :institucion_patrullasestado , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.number_field :patrullaspersonas, id: :institucion_patrullaspersonas , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.text_area :patrullasobservaciones, id: :institucion_patrullasobservaciones, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Carros Bomberos</th>
+      <td> 
+  <div class="field">
+    <%= form.number_field :carrosbomberos, id: :institucion_carrosbomberos , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.check_box :carrosbomberosestado, id: :institucion_carrosbomberosestado, class:'form-control p-input' %>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.number_field :carrosbomberospersonas, id: :institucion_carrosbomberospersonas , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+
+    <%= form.text_area :carrosbomberosobservaciones, id: :institucion_carrosbomberosobservaciones, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Cisternas</th>
+      <td>  <div class="field">
+    <%= form.number_field :cisternas, id: :institucion_cisternas , class:'form-control p-input'%>
+  </div></td>
+      <td><div class="field">
+    <%= form.check_box :cisternasestado, id: :institucion_cisternasestado , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.number_field :cisternaspersonas, id: :institucion_cisternaspersonas , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.text_area :cisternasobservaciones, id: :institucion_cisternasobservaciones , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Maquinaria Pesada</th>
+      <td>  <div class="field">
+    <%= form.number_field :maquinariapesada, id: :institucion_maquinariapesada , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.check_box :maquinariapesadaestado, id: :institucion_maquinariapesadaestado, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.number_field :maquinariapesadapersonas, id: :institucion_maquinariapesadapersonas , class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.text_field :maquinariapesadaobservaciones, id: :institucion_maquinariapesadaobservaciones, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+  </tbody>
+  <h5>Equipos de Telecomunicaciones y tecnologia</h5>
+</table>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Equipos</th>
+      <th scope="col">cantidad</th>
+      <th scope="col">estado(operable/inoperable)</th>
+      <th scope="col">observaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Radios</th>
+      <td>
+  <div class="field">
+    <%= form.number_field :equiporadios, id: :institucion_equiporadios, class:'form-control p-input' %>
+  </div></td>
+      <td>  <div class="field">
+    <%= form.check_box :equiporadios, id: :institucion_equiporadios , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.text_area :equiporadioobservaciones, id: :institucion_equiporadioobservaciones, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Comunicacion Satelital</th>
+      <td>
+  <div class="field">
+    <%= form.number_field :comunicacionesatelital, id: :institucion_comunicacionesatelital , class:'form-control p-input'%>
+  </div>
+</td>
+      <td>  <div class="field">
+    <%= form.check_box :comunicacionsatelital, id: :institucion_comunicacionsatelital , class:'form-control p-input'%>
+  </div></td>
+      <td>
+  <div class="field">
+    <%= form.text_area :satelitalobservaciones, id: :institucion_satelitalobservaciones , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Gps</th>
+      <td> <div class="field">
+    <%= form.number_field :gps, id: :institucion_gps , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.check_box :gpsestado, id: :institucion_gpsestado , class:'form-control p-input'%>
+  </div></td>
+      <td> <div class="field">
+    <%= form.text_area :gpsobservaciones, id: :institucion_gpsobservaciones , class:'form-control p-input'%>
+  </div></td>
+    </tr>
+     
+  </tbody>
+</table>
+
+ 
+
+ 
+
+ 
+
+ 
+<% end %>
+                            <button type="submit" class="btn btn-primary">Guardar institucion</button>
+                        </div>

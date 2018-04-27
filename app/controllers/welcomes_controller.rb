@@ -1,11 +1,36 @@
 class WelcomesController < ApplicationController
-  before_action :set_welcome, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_welcome, only: [:show, :edit, :update, :destroy,:eliminar, :habilitarlo, :desactivarlo ]
   # GET /welcomes
   # GET /welcomes.json
   def index
-    @welcomes = Welcome.all
+    @palabra = ''
+    @palabra = params[:palabra]
+    @usuarios = User.where("email LIKE '#{@palabra}%'")	  
   end
+
+
+def eliminar
+  user=User.find(params[:id])
+  user.destroy
+  @usuarios = User.all
+  render '/'
+end
+
+def habilitarlo
+  usuario = User.find(params[:id])
+  usuario.tipo = true
+  usuario.save
+  @usuarios = User.where("email LIKE '#{@palabra}%'") 
+  render '/'
+end
+
+def desactivarlo
+  usuario = User.find(params[:id])
+  usuario.tipo = nil
+  usuario.save
+  @usuarios = User.where("email LIKE '#{@palabra}%'") 
+  render '/'
+end
 
   # GET /welcomes/1
   # GET /welcomes/1.json

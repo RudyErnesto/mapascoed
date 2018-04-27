@@ -7,7 +7,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <body background="/assets/grupoderescate.jpg">
+    <body>
+     <div class="content-wrapper", style='width: 100%';>
+    <h3 class="text-primary mb-4">Lista Encargados</h3>
+    <div class="row mb-2", style='width: 100%;'>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-block", style='width: 800px;'>
+                    <h4 class="card-title mb-4">Lista Encargados</h4>
+                    <form class="forms-sample" >
+    <h1></h1>
+  
+		</br>
+	</br>
+  <div class="container">
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample">
+    Link with href
+  </a>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>  
+</div>
+</div>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Correo</th>
+      <th scope="col">Activar</th>
+      <th scope="col">Desactivar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+     <% @usuarios.each do |usuario| %>
+      <tr>
+        <td class = "info"><%= usuario.email%></td>
+            <td class = "success">
+              <%= link_to 'Habilitarlo', :controller => :welcome ,:action => :habilitarlo, :id => usuario.id , :class=>"btn btn-primary"%>
+            </td>
+     
+            <td class = "success">
+              <%= link_to 'Descativarlo', :controller => :welcome ,:action => :desactivarlo, :id => usuario.id %>
+            </td>
+       <td><%= link_to 'Eliminar',:controller => :welcome, :action => :eliminar, :id => usuario.id %></td>
+       </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+</div>
+
+
     
     </body>
 

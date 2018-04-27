@@ -1,0 +1,353 @@
+<p id="notice"><%= notice %></p>
+  <div class="content-wrapper", style='width: 100%';>
+    <h3 class="text-primary mb-4">Hoja de Recursos</h3>
+    <div class="row mb-2", style='width: 100%;'>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-block", style='width: 800px;'>
+                    <h4 class="card-title mb-4">Informacion de Hoja de Recursos</h4>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Equipos desplegados</th>
+      <th scope="col">Personas desplegados</th>
+      <th scope="col">Vehiculos desplegados</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Total</th>
+      <td><div class="field"><%= @hojaderecurso.equiposdespleagados %>
+  </div></td>
+      <td>  <div class="field">
+
+    <%= @hojaderecurso.personasdesplegados %>  </div></td>
+      <td><div class="field">
+
+  <%= @hojaderecurso.vehiculosdesplegados %>  </div></td>
+    </tr>
+   
+  </tbody>
+</table>
+  <h5>Informacion del equipo</h5>
+  <div class="field">
+<strong>Identificadorequipo:</strong> <%= @hojaderecurso.identificadorequipo %>  </div>
+
+  <div class="field">
+<strong>Nombrequipo:</strong>
+  <%= @hojaderecurso.nombrequipo %>
+  </div>
+
+  <div class="field">
+  <strong>Numeropersonas:</strong>
+  <%= @hojaderecurso.numeropersonas %>
+  </div>
+
+  <div class="field">
+   <strong>Numeroperros:</strong>
+  <%= @hojaderecurso.numeroperros %>
+  </div>
+  <div class="field">
+    <strong>Categoriarecursos:</strong>
+  <%= @hojaderecurso.categoriarecursos %>
+  </div>
+  <h5>Capacidad de Respuesta</h5>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">SI/NO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Busqueda Tenica</th>
+      <td><div class="field">
+      <%= @hojaderecurso.busquedatecnica %>  </div></td>
+      </tr>
+    <tr>
+      <th scope="row">Rescate Vehicular</th>
+      <td><div class="field">
+      <%= @hojaderecurso.recatevehicula %>
+  </div></td>
+ 
+    </tr>
+    <tr>
+      <th scope="row">Rescate Vehicular</th>
+      <td><div class="field">
+
+  <%= @hojaderecurso.rescatevertical %>
+  </div></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Atencion Prehospitalaria</th>
+      <td> <div class="field">
+  <%= @hojaderecurso.atencionPrehospitalaria %>
+  </div></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">Rescate en estrutura colapsada</th>
+      <td><div class="field">
+    <%= @hojaderecurso.rescateestrucurascolapsadas %>
+  </div></td>
+
+    </tr>
+<tr>
+      <th scope="row">Incendios Estructurales</th>
+      <td>
+  <div class="field">
+  <%= @hojaderecurso.incendioestructura %>
+  </div></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Apoyo para CCO/PC</th>
+      <td> <div class="field">
+  <%= @hojaderecurso.apoyoCCOPC %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Apoyo Logistico</th>
+      <td><div class="field">
+  <%= @hojaderecurso.apoyologistico %>
+  </div></td>
+      <td><div class="field">
+        <strong>Especifique apoyo:</strong>
+  <%= @hojaderecurso.especofiquelogistico %>
+  </div></td>
+     
+    </tr>
+    <tr>
+      <th scope="row">Otras capacidades</th>
+      <td> <div class="field">
+
+  <%= @hojaderecurso.otrascapacidades %>
+  </div></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Vehiculo</th>
+      <td>  <div class="field">
+
+  <%= @hojaderecurso.vehiculo %>
+  </div></td>
+  <td> <div class="field">
+     <strong>Tipo de Vehiculo:</strong>
+  <%= @hojaderecurso.tipovehiculo %>
+  </div></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Comida</th>
+      <td>  <div class="field">
+  <%= @hojaderecurso.comida %>
+  </div></td>
+      <td>  <div class="field">
+  <strong>Tiempocomida:</strong>
+  <%= @hojaderecurso.tiempocomida %>
+  </div></td>
+ 
+    </tr>
+  </tbody>
+</table>
+  <div class="field">
+  <strong>Fechavigenciaformulario:</strong>
+  <%= @hojaderecurso.fechavigenciaformulario %>
+  </div>
+
+  <div class="field">
+  <strong>Tiemporespesta:</strong>
+  <%= @hojaderecurso.tiemporespesta %>
+  </div>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Base de Operaciones</th>
+      <th scope="col">Especifique</th>
+      <th scope="col">Cpacidad de Monitoreo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th> <div class="field">
+
+  <%= @hojaderecurso.baseoperaciones %>
+  </div></th>
+      <td><div class="field">
+
+  <%= @hojaderecurso.baseoperacionesespecifique %>
+  </div></td>
+      <td> <div class="field">
+
+  <%= @hojaderecurso.capacidadmonitoreo %>
+  </div></td>
+    </tr>
+  </tbody>
+</table> 
+  <h5>Requerimiento de Apoyo</h5>
+  <table class="table table-dark">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>    
+      <td>  <div class="field">
+  <strong>Transportepersonas:</strong>
+  <%= @hojaderecurso.transportepersonas %>
+    </div>
+    </td>
+      <td>  <div class="field">
+      <strong>Transporteperrros:</strong>
+  <%= @hojaderecurso.transporteperrros %>
+  </div></td>
+      
+    </tr>
+    <tr>
+  
+      <td> <div class="field">
+      <strong>Equipamiento:</strong>
+  <%= @hojaderecurso.equipamiento %>
+  </div></td>
+      <td> <div class="field">
+       <strong>Equipamientoespecial:</strong>
+    <%= @hojaderecurso.equipamientoespecial %>
+  </div></td>
+     
+    </tr>
+    <tr>
+      
+      <td>  <div class="field">
+      <strong>Gasolina:</strong>
+  <%= @hojaderecurso.gasolina %>
+  </div></td>
+      <td> <div class="field">
+        <strong>Preciogasolina:</strong>
+        <%= @hojaderecurso.preciogasolina %>
+  </div></td>
+    </tr>
+
+    <tr>
+    <td><div class="field">
+    <strong>Diesel:</strong>
+  <%= @hojaderecurso.diesel %>
+  </div></td>
+     <td> <div class="field">
+   <strong>Preciodiesel:</strong>
+  <%= @hojaderecurso.preciodiesel %>
+  </div></td>
+    </tr>
+
+
+    <tr>
+    <td> <div class="field">
+     <strong>Comida:</strong>
+  <%= @hojaderecurso.comida %>
+  </div></td>
+     <td> <div class="field">
+       <strong>Agua:</strong>
+      <%= @hojaderecurso.agua %>
+  </div></td>
+  <td> <div class="field">
+   <strong>Requerimientoespacioencco:</strong>
+  <%= @hojaderecurso.requerimientoespacioenCCO %>
+  </div></td>
+    </tr>
+  
+  </tbody>
+</table>
+
+  <div class="field">
+  <strong>Otrorequerimientologistico:</strong>
+  <%= @hojaderecurso.otrorequerimientologistico %>
+  </div>
+  <h5>Contactos</h5>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Primer Contacto</th>
+      <th scope="col">Segundo Contacto</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>  <div class="field">
+      <strong>Nombre:</strong>
+  <%= @hojaderecurso.contacto1nombre %>
+  </div></td>
+      <td><div class="field">
+      <strong>Nombre:</strong>
+  <%= @hojaderecurso.contacto2nombre %>
+  </div></td>
+      
+    </tr>
+    <tr>
+      <td> <div class="field">
+       <strong>Contacto1telefono:</strong>
+  <%= @hojaderecurso.contacto1telefono %>
+  </div></td>
+      <td> <div class="field">
+       <strong>Contacto2celular:</strong>
+  <%= @hojaderecurso.contacto2celular %>
+  </div></td>
+   
+    </tr>
+    <tr>
+      
+      <td> <div class="field">
+      <strong>Contacto1correo:</strong>
+       <%= @hojaderecurso.contacto1correo %>  </div></td>
+      <td><div class="field">
+      <strong>Contacto2:</strong>
+      <%= @hojaderecurso.contacto2correo %>
+  </div></td>
+    
+    </tr>
+  
+  </tbody>
+</table>
+  <h5>Base de Operaciones</h5>
+  <div class="field">
+   <strong>Direccionbasedeoperaciones:</strong>
+  <%= @hojaderecurso.direccionbasedeoperaciones %>
+  </div>
+
+  <div class="field">
+   <strong>Basedeoperacionestelefono:</strong>
+  <%= @hojaderecurso.basedeoperacionestelefono %>
+  </div>
+
+  <div class="field">
+  <strong>Frecuenciaradiobase:</strong>
+  <%= @hojaderecurso.frecuenciaradiobase %>
+  </div>
+
+  <div class="field">
+   <strong>Cordenadasbasedecimal:</strong>
+  <%= @hojaderecurso.cordenadasbasedecimal %>
+  </div>
+
+  <div class="field">
+  <strong>Cordenadasbaseotroformato:</strong>
+  <%= @hojaderecurso.cordenadasbaseotroformato %>
+  </div>
+
+  <div class="field">
+  <strong>Formulariocompletadofecha:</strong>
+  <%= @hojaderecurso.formulariocompletadofecha %>
+  </div>
+  <h5>Formulado por: </h5>
+  <div class="field">
+   <strong>Nombre:</strong>
+  <%= @hojaderecurso.nombre %>
+  </div>
+
+  <div class="field">
+  <strong>Gradoycargo:</strong>
+  <%= @hojaderecurso.gradoycargo %>
+  </div>
+
+<%= link_to 'Editar', edit_hojaderecurso_path(@hojaderecurso) ,class: "btn btn-warning"%> |
+<%= link_to 'Atras', hojaderecursos_path ,class: "btn btn-primary"%>

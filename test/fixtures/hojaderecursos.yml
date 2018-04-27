@@ -1,0 +1,111 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  equiposdespleagados: 1
+  personasdesplegados: 1
+  vehiculosdesplegados: 1
+  identificadorequipo: MyString
+  nombrequipo: MyString
+  numeropersonas: 1
+  numeroperros: 1
+  categoriarecursos: MyString
+  busquedatecnica: false
+  recatevehicula: false
+  rescatevertical: false
+  atencionPrehospitalaria: false
+  rescateestrucurascolapsadas: false
+  incendioestructura: false
+  apoyoCCO/PC: false
+  apoyologistico: false
+  especofiquelogistico: MyString
+  otrascapacidades: MyString
+  vehiculo: false
+  tipovehiculo: MyString
+  comida: false
+  tiempocomida: 1
+  fechavigenciaformulario: 2018-04-16
+  tiemporespesta: 2018-04-16 14:21:39
+  baseoperaciones: false
+  baseoperacionesespecifique: MyString
+  capacidadmonitoreo: false
+  transportepersonas: 1
+  transporteperrros: 1
+  equipamiento: MyText
+  equipamientoespecial: MyText
+  gasolina: 1.5
+  preciogasolina: 1.5
+  diesel: 1.5
+  preciodiesel: 1.5
+  comida: false
+  agua: false
+  requerimientoespacioenCCO: MyText
+  otrorequerimientologistico: MyText
+  contacto1nombre: MyString
+  contacto1telefono: MyString
+  contacto1correo: MyString
+  contacto2: 
+  contacto2celular: MyString
+  contacto2: 
+  direccionbasedeoperaciones: MyString
+  basedeoperacionestelefono: MyString
+  frecuenciaradiobase: MyString
+  cordenadasbasedecimal: MyString
+  cordenadasbaseotroformato: MyString
+  formulariocompletadofecha: 2018-04-16
+  nombre: MyString
+  gradoycargo: MyString
+
+two:
+  equiposdespleagados: 1
+  personasdesplegados: 1
+  vehiculosdesplegados: 1
+  identificadorequipo: MyString
+  nombrequipo: MyString
+  numeropersonas: 1
+  numeroperros: 1
+  categoriarecursos: MyString
+  busquedatecnica: false
+  recatevehicula: false
+  rescatevertical: false
+  atencionPrehospitalaria: false
+  rescateestrucurascolapsadas: false
+  incendioestructura: false
+  apoyoCCO/PC: false
+  apoyologistico: false
+  especofiquelogistico: MyString
+  otrascapacidades: MyString
+  vehiculo: false
+  tipovehiculo: MyString
+  comida: false
+  tiempocomida: 1
+  fechavigenciaformulario: 2018-04-16
+  tiemporespesta: 2018-04-16 14:21:39
+  baseoperaciones: false
+  baseoperacionesespecifique: MyString
+  capacidadmonitoreo: false
+  transportepersonas: 1
+  transporteperrros: 1
+  equipamiento: MyText
+  equipamientoespecial: MyText
+  gasolina: 1.5
+  preciogasolina: 1.5
+  diesel: 1.5
+  preciodiesel: 1.5
+  comida: false
+  agua: false
+  requerimientoespacioenCCO: MyText
+  otrorequerimientologistico: MyText
+  contacto1nombre: MyString
+  contacto1telefono: MyString
+  contacto1correo: MyString
+  contacto2: 
+  contacto2celular: MyString
+  contacto2: 
+  direccionbasedeoperaciones: MyString
+  basedeoperacionestelefono: MyString
+  frecuenciaradiobase: MyString
+  cordenadasbasedecimal: MyString
+  cordenadasbaseotroformato: MyString
+  formulariocompletadofecha: 2018-04-16
+  nombre: MyString
+  gradoycargo: MyString

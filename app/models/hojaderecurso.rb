@@ -1,0 +1,2 @@
+class Hojaderecurso < ApplicationRecord
+end

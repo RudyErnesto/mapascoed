@@ -1,0 +1,1397 @@
+<p id="notice"><%= notice %></p>
+  <div class="content-wrapper", style='width: 100%';>
+    <h3 class="text-primary mb-4">Hoja de Instituciones</h3>
+    <div class="row mb-2", style='width: 100%;'>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-block", style='width: 800px;'>
+                    <h4 class="card-title mb-4">Informacion de Institucion</h4>
+                     <div class="content-wrapper", style='width: 100%';>
+    <h3 class="text-primary mb-4">Hoja de institucion</h3>
+    <div class="row mb-2", style='width: 100%;'>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-block", style='width: 800px;'>
+                    <h4 class="card-title mb-4">Formulario Instituciones</h4>
+                    <form class="forms-sample" >
+                    <h5>Datos Generales</h5>
+  <div class="field">
+<p>
+  <strong>Nombre:</strong>
+  <%= @institucion.nombre %>
+</p>  </div>
+<table class="table">
+  <tbody>
+    <tr>
+      
+      <td><div class="field">
+    <p>
+  <strong>Personaencargada:</strong>
+  <%= @institucion.personaencargada %>
+</p></div>
+</td>
+      <td><div class="field">
+    <p>
+  <strong>Cargo:</strong>
+  <%= @institucion.cargo %>
+</p></div></td>
+   
+    </tr>
+    <tr>
+      <td><div class="field">
+   <p>
+  <strong>Direccion:</strong>
+  <%= @institucion.direccion %>
+</p> </div></td>
+    
+    </tr>
+    <tr>
+      <td><div class="field">
+   <p>
+  <strong>Departamento:</strong>
+  <%= @institucion.departamento %>
+</p> </div></td>
+      <td> <div class="field">
+   <p>
+  <strong>Municipio:</strong>
+  <%= @institucion.municipio %>
+</p></div></td>
+      <td><div class="field">
+  <p>
+  <strong>Localidad:</strong>
+  <%= @institucion.localidad %>
+</p></div></td>
+    </tr>
+    <tr>
+     
+      <td><div class="field">
+   <p>
+  <strong>Telefono:</strong>
+  <%= @institucion.telefono %>
+</p></div></td>
+      <td><div class="field">
+   <p>
+  <strong>Fax:</strong>
+  <%= @institucion.fax %>
+</p></div></td>
+      <td>
+  <div class="field">
+  <p>
+  <strong>Pagina web:</strong>
+  <%= @institucion.paginweb %>
+</p></div></td>
+    </tr>
+    <tr><td>
+     <div class="field">
+   <p>
+  <strong>Nombre del contacto:</strong>
+  <%= @institucion.nombrecontacto %>
+</p></div>
+    </td></tr>
+     
+  <tr>
+    
+      <td> <div class="field">
+   <p>
+  <strong>Cargo:</strong>
+  <%= @institucion.cargi %>
+</p> </div></td>
+      <td>
+  <div class="field">
+   <p>
+  <strong>Tiempo en el cargo:</strong>
+  <%= @institucion.tiempoencargo %>
+</p></div></td>
+    </tr>
+<tr>
+<td><div class="field">
+  <p>
+  <strong>Direccion:</strong>
+  <%= @institucion.direccion %>
+</p></div></td>
+  </tr>
+  <tr>
+      
+      <td> <div class="field">
+  <p>
+  <strong>Telefono:</strong>
+  <%= @institucion.telefono %>
+</p></div></td>
+      <td> <div class="field">
+ 
+<p>
+  <strong>Celular:</strong>
+  <%= @institucion.celular %>
+</p> </div></td>
+      <td>  <div class="field">
+ <p>
+  <strong>Email:</strong>
+  <%= @institucion.email %>
+</p></div></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+  <h5>Como se clasifica la institucion?</h5>
+  </thead>
+  <tbody>
+    <tr>
+     
+      <td><div class="field">
+  <p>
+  <strong>Institucion publica:</strong>
+  <%= @institucion.institucionpublica %>
+</p></div></td>
+      <td><div class="field">
+   
+<p>
+  <strong>Detalle:</strong>
+  <%= @institucion.detalle %>
+</p>
+</div></td>
+    </tr>
+    <tr>
+      <td><div class="field">
+ <p>
+  <strong>Institucion privada:</strong>
+  <%= @institucion.institucionprivada %>
+</p></div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Detalle:</strong>
+  <%= @institucion.detalleprivado %>
+</p>
+ </div></td>
+     
+    </tr>
+    <tr>
+      
+      <td> <div class="field">
+ 
+<p>
+  <strong>Sin fines de lucro:</strong>
+  <%= @institucion.sinfinesdelucro %>
+</p></div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Detalle:</strong>
+  <%= @institucion.detallesinfinesdelucro %>
+</p>
+ </div>
+</td>
+      <tr>
+      
+      <td> <div class="field">
+  <p>
+  <strong>Grupo voluntario:</strong>
+  <%= @institucion.grupovoluntario %>
+</p></div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Detalle:</strong>
+  <%= @institucion.detalle %>
+</p></div></td>
+    </tr>
+    <tr>
+    <td>
+    <div class="field">
+  
+<p>
+  <strong>Coe:</strong>
+  <%= @institucion.coe %>
+</p></div>
+    </td>
+    </tr>
+    <tr>
+      
+      <td><div class="field">
+   <p>
+  <strong>Coe nacional:</strong>
+  <%= @institucion.coenacional %>
+</p></div></td>
+      <td><div class="field">
+    <p>
+  <strong>Coe departamental:</strong>
+  <%= @institucion.coedepartalemtal %>
+</p></div>
+</td>
+      <td><div class="field">
+  <p>
+  <strong>Coe municipal:</strong>
+  <%= @institucion.coemunicipal %>
+</p>
+</div></td>
+    </tr>
+    
+    <tr>
+      <td> <div class="field">
+  <p>
+  <strong>Mesas sectoriales:</strong>
+  <%= @institucion.mesassectoriales %>
+</p></div></td>
+    </tr>
+
+    <tr>
+      
+      <td> <div class="field">
+  <p>
+  <strong>Salud:</strong>
+  <%= @institucion.salud %>
+</p>
+</div></td>
+    <td>  <div class="field">
+    <p>
+  <strong>Educacion:</strong>
+  <%= @institucion.educacion %>
+</p</div></td>
+    </tr>
+    <tr>
+     
+      <td> <div class="field">
+    <p>
+  <strong>Aguaysaneamiento:</strong>
+  <%= @institucion.aguaysaneamiento %>
+</p></div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Seguridadalimentaria:</strong>
+  <%= @institucion.seguridadalimentaria %>
+</p></div></td>
+    </tr>
+
+    <tr>
+     
+      <td><div class="field">
+  <p>
+  <strong>Gobernabilidadproteccion:</strong>
+  <%= @institucion.gobernabilidadproteccion %>
+</p></div></td>
+      <td> <div class="field">
+   <p>
+  <strong>Albergues:</strong>
+  <%= @institucion.albergues %>
+</p></div></td>
+    </tr>
+    <tr>
+      <td>  <div class="field">
+  <p>
+  <strong>Recuperacion:</strong>
+  <%= @institucion.recuperacion %>
+</p></div></td>
+    </tr>
+    <tr>
+      
+      <td> <div class="field">
+   <p>
+  <strong>Comisiones departales:</strong>
+  <%= @institucion.comisionesdepartales %>
+</p></div></td>
+      <td> 
+  <div class="field">
+  <p>
+  <strong>Detallecomisiones:</strong>
+  <%= @institucion.detallecomisiones %>
+</p> </div></td>
+    </tr>
+
+<tr>
+      
+      <td><div class="field">
+   <p>
+  <strong>Comisionesmunicipalescoem:</strong>
+  <%= @institucion.comisionesmunicipalesCOEM %>
+</p></div></td>
+      <td>  <div class="field">
+ <p>
+  <strong>Detallescoem:</strong>
+  <%= @institucion.detallesCOEM %>
+</p>
+ </div></td>
+    </tr>
+
+    <tr>
+      
+      <td> <div class="field">
+   <p>
+  <strong>Dgr:</strong>
+  <%= @institucion.dgr %>
+</p></div></td>
+      <td> <div class="field">
+   <p>
+  <strong>Ugr:</strong>
+  <%= @institucion.ugr %>
+</p></div></td>
+      <td> <div class="field">
+   <p>
+  <strong>Unete:</strong>
+  <%= @institucion.unete %>
+</p></div></td>
+    </tr>
+
+    <tr>
+    
+      <td>
+  <div class="field">
+   <p>
+  <strong>Grus:</strong>
+  <%= @institucion.grus %>
+</p></div></td>
+      <td><div class="field">
+    <p>
+  <strong>Consorciodeong:</strong>
+  <%= @institucion.consorciodeong %>
+</p></div></td>
+      <td><div class="field">
+   <p>
+  <strong>Observatorios:</strong>
+  <%= @institucion.observatorios %>
+</p></div></td>
+  <td><div class="field">
+ <p>
+  <strong>Detallesobservatorio:</strong>
+  <%= @institucion.detallesobservatorio %>
+</p> </div>
+</td>
+    </tr>
+
+    <tr>
+     
+      <td> <div class="field">
+  <p>
+  <strong>Local:</strong>
+  <%= @institucion.local %>
+</p> </div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Detalleslocal:</strong>
+  <%= @institucion.detalleslocal %>
+</p> </div></td>
+    </tr>
+    <tr>
+      <td>  <div class="field">
+   
+<p>
+  <strong>Otros:</strong>
+  <%= @institucion.otros %>
+</p></div></td>
+      <td>
+  <div class="field">
+ 
+<p>
+  <strong>detalle:</strong>
+  <%= @institucion.otrosdetalle %>
+</p> </div></td>
+    </tr>
+    <tr>
+      
+      <td><div class="field">
+ 
+<p>
+  <strong>gestion de riesgo:</strong>
+  <%= @institucion.mandatogestionriesgo %>
+</p> </div></td>
+      <td> <div class="field">
+ 
+<p>
+  <strong>Mandatootro:</strong>
+  <%= @institucion.mandatootro %>
+</p> </div></td>
+      <td> <div class="field">
+  
+<p>
+ <p>
+  <strong>Mandatodetalle:</strong>
+  <%= @institucion.mandatodetalle %>
+</p></div></td>
+    </tr>
+  </tbody>
+</table>
+  <div class="field">
+   <p>
+  <strong>Especialidadesmandato:</strong>
+  <%= @institucion.especialidadesmandato %>
+</p></div>
+
+
+  <table class="table">
+  <thead>
+    
+      <h5>Que servicios brinda en primera respuesta</h5>
+ 
+    
+  </thead>
+  <tbody>
+    <tr>
+    
+      <td>  <div class="field">
+   <p>
+  <strong>Serviciotransporte:</strong>
+  <%= @institucion.serviciotransporte %>
+</p></div></td>
+      <td>  <div class="field">
+  <p>
+  <strong>Serviciobusquedaperros:</strong>
+  <%= @institucion.serviciobusquedaperros %>
+</p></div></td>
+   
+    </tr>
+    <tr>
+     
+      <td><div class="field">
+   <p>
+  <strong>Serviciotelecomunicaciones:</strong>
+  <%= @institucion.serviciotelecomunicaciones %>
+</p></div></td>
+      <td>  <div class="field">
+  <p>
+  <strong>Serviciosincendiosurbanos:</strong>
+  <%= @institucion.serviciosincendiosurbanos %>
+</p></div></td>
+    </tr>
+    <tr>
+      <td><div class="field">
+   <p>
+  <strong>Servicioevaluacion:</strong>
+  <%= @institucion.servicioevaluacion %>
+</p></div></td>
+      <td> <div class="field">
+  
+<p>
+  <strong>Servicioincendioforestal:</strong>
+  <%= @institucion.servicioincendioforestal %>
+</p></div></td>
+    </tr>
+  <tr>
+      
+      <td> <div class="field">
+  <p>
+  <strong>Serviciosaludysaneamiento:</strong>
+  <%= @institucion.serviciosaludysaneamiento %>
+</p></div></td>
+      <td>  <div class="field">
+<p>
+  <strong>Serviciomanejomateriales:</strong>
+  <%= @institucion.serviciomanejomateriales %>
+</p></div></td>
+    </tr>
+    <tr>
+      
+      <td>
+  <div class="field">
+  <p>
+  <strong>Serviciobusquedayrescate:</strong>
+  <%= @institucion.serviciobusquedayrescate %>
+</p> </div></td>
+      <td>  <div class="field">
+ 
+<p>
+  <strong>Serviciospublicos:</strong>
+  <%= @institucion.serviciospublicos %>
+</p> </div></td>
+      
+    </tr>
+    <tr>
+      
+      <td><div class="field">
+  
+<p>
+  <strong>Serviciobusquedayrescateenaltura:</strong>
+  <%= @institucion.serviciobusquedayrescateenaltura %>
+</p> </div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Servicioseguridad:</strong>
+  <%= @institucion.servicioseguridad %>
+</p></div></td>
+    </tr>
+    <tr>
+      
+  
+      <td><div class="field">
+<p>
+  <strong>Serviciosalvamiento:</strong>
+  <%= @institucion.serviciosalvamiento %>
+</p></div></td>
+      <td> <div class="field">
+   <p>
+  <strong>Manejogeneral:</strong>
+  <%= @institucion.manejogeneral %>
+</p> </div></td>
+    </tr>
+  </tbody>
+  
+</table>
+ <div class="field">
+  <p>
+  <strong>Serviciodetalle:</strong>
+  <%= @institucion.serviciodetalle %>
+</p></div>
+
+  <table class="table">
+  <thead>
+    
+      <th scope="col">En que tipo de eventos adversos actua en primera respuesta</th>
+  
+  </thead>
+  <tbody>
+    <tr>
+      <td> <div class="field">
+   <p>
+  <strong>Respuestanaturales:</strong>
+  <%= @institucion.respuestanaturales %>
+</p></div></td>
+      
+    </tr>
+    <tr>
+      <td><div class="field">
+  <p>
+  <strong>Respuestahidrometeorologicas:</strong>
+  <%= @institucion.respuestahidrometeorologicas %>
+</p> </div></td>
+      <td>
+  <div class="field">
+   <p>
+  <strong>Respuestainundaciones:</strong>
+  <%= @institucion.respuestainundaciones %>
+</p></div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Respuestariadas:</strong>
+  <%= @institucion.respuestariadas %>
+</p> </div></td>
+  <td> <div class="field">
+<p>
+  <strong>Respuestavientosfuertes:</strong>
+  <%= @institucion.respuestavientosfuertes %>
+</p></div></td>
+  <td> <div class="field">
+  <p>
+  <strong>Respuestageologicas:</strong>
+  <%= @institucion.respuestageologicas %>
+</p></div></td>
+    </tr>
+    <tr>
+      <td> <div class="field">
+   <p>
+  <strong>Respuestadeslizamiento:</strong>
+  <%= @institucion.respuestadeslizamiento %>
+</p></div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Respuestaderrumber:</strong>
+  <%= @institucion.respuestaderrumber %>
+</p></div></td>
+      <td>
+  <div class="field">
+  <p>
+  <strong>Respuestasismos:</strong>
+  <%= @institucion.respuestasismos %>
+</p></div></td>
+  <td> <div class="field">
+ <p>
+  <strong>Respuestaotros:</strong>
+  <%= @institucion.respuestaotros %>
+</p></div></td>
+  <td>
+  <div class="field">
+  <p>
+  <strong>Respuestadetalle:</strong>
+  <%= @institucion.respuestadetalle %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td scope="row">
+  <div class="field">
+  <p>
+  <strong>Socionatural:</strong>
+  <%= @institucion.socionatural %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+  <p>
+  <strong>Socioambiental:</strong>
+  <%= @institucion.socioambiental %>
+</p></div></td>
+      <td><div class="field">
+  <p>
+  <strong>Socioincendio:</strong>
+  <%= @institucion.socioincendio %>
+</p></div></td>
+      <td> <div class="field">
+<p>
+  <strong>Sociootro:</strong>
+  <%= @institucion.sociootro %>
+</p> </div></td>
+  <td><div class="field">
+ <p>
+  <strong>Sociodetalle:</strong>
+  <%= @institucion.sociodetalle %>
+</p>
+</div></td>
+    </tr>
+     <tr>
+      <th scope="row"><div class="field">
+  <p>
+  <strong>Antropicas:</strong>
+  <%= @institucion.antropicas %>
+</p></div></th>
+    </tr>
+     <tr>
+  
+      <td><div class="field">
+   <p>
+  <strong>Antropicasincendios:</strong>
+  <%= @institucion.antropicasincendios %>
+</p>
+</div></td>
+      <td>
+  <div class="field">
+ <p>
+  <strong>Antropicasotros:</strong>
+  <%= @institucion.antropicasotros %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td> <div class="field">
+ <p>
+  <strong>Otrossocios:</strong>
+  <%= @institucion.otrossocios %>
+</p> </div></td>
+      <td>  <div class="field">
+  <p>
+  <strong>Otrosdetallessocios:</strong>
+  <%= @institucion.otrosdetallessocios %>
+</p></div>
+</td>
+    </tr>
+  </tbody>
+</table>
+<h5>que eventos son a los que da primera respuesta frecuentemente</h5>
+  <div class="field">
+ <p>
+  <strong>Eventosfrecuentes:</strong>
+  <%= @institucion.eventosfrecuentes %>
+</p></div>
+<h5>Cuales son sus capacidades</h5>
+<table class="table">
+  <thead>
+    <h5>posee planes o protocolos de accion</h5>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">plan de contingencia</th>
+      <td><div class="field">
+  <p>
+  <strong>Plandecontingencia:</strong>
+  <%= @institucion.plandecontingencia %>
+</p></div></td>
+      <td> <div class="field">
+    <p>
+  <strong>Planencasosi:</strong>
+  <%= @institucion.planencasosi %>
+</p></div></td>
+      
+    </tr>
+    <tr>
+
+      <td>
+  <div class="field">
+  <p>
+  <strong>Tareasprotocolo:</strong>
+  <%= @institucion.tareasprotocolo %>
+</p></div></td>
+  <td>
+   <div class="field">
+   <p>
+  <strong>Porcentajerespuesta:</strong>
+  <%= @institucion.porcentajerespuesta %>
+</p>
+</div>
+  </td>
+
+    </tr>
+    <tr>
+      <td> <div class="field">
+  <p>
+  <strong>Plandeemergencia:</strong>
+  <%= @institucion.plandeemergencia %>
+</p></div></td>
+      <td><div class="field">
+   <p>
+  <strong>Encasosiemergencia:</strong>
+  <%= @institucion.encasosiemergencia %>
+</p></div></td>
+  
+    </tr>
+      <tr>
+      <td>  <div class="field">
+  <p>
+  <strong>Tareasemergencia:</strong>
+  <%= @institucion.tareasemergencia %>
+</p></div></td>
+    </tr>
+       <tr>
+      <td>  <div class="field">
+ <p>
+  <strong>Protocolodeaccion:</strong>
+  <%= @institucion.protocolodeaccion %>
+</p></div></td>
+      <td> <div class="field">
+   <p>
+  <strong>Encasosiprotocolo:</strong>
+  <%= @institucion.encasosiprotocolo %>
+</p>
+</div></td>
+    </tr>
+    <tr><td>  <div class="field">
+ <p>
+  <strong>Areaflujo:</strong>
+  <%= @institucion.areaflujo %>
+</p></div>
+  </td>
+    <td>  <div class="field">
+ <p>
+  <strong>Arealogistica:</strong>
+  <%= @institucion.arealogistica %>
+</p></div>
+</td>
+<td>
+<div class="field">
+  <p>
+  <strong>Areadocumentacion:</strong>
+  <%= @institucion.areadocumentacion %>
+</p></div>
+</td>
+  </tr>
+   <tr>
+      <td>  <div class="field">
+   <p>
+  <strong>Areacomunicaciones:</strong>
+  <%= @institucion.areacomunicaciones %>
+</p></div></td>
+      <td>  <div class="field">
+ <p>
+  <strong>Areatransporte:</strong>
+  <%= @institucion.areatransporte %>
+</p></div></td>
+      <td>  <div class="field">
+ <p>
+  <strong>Areaevaluaciondemergencia:</strong>
+  <%= @institucion.areaevaluaciondemergencia %>
+</p>
+</div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+  <p>
+  <strong>Areaemergenciamedica:</strong>
+  <%= @institucion.areaemergenciamedica %>
+</p></div></td>
+      <td>  <div class="field">
+  <p>
+  <strong>Areamovilizacion:</strong>
+  <%= @institucion.areamovilizacion %>
+</p>
+</div></td>
+      <td>  <div class="field">
+  <p>
+  <strong>Areaoperaciones:</strong>
+  <%= @institucion.areaoperaciones %>
+</p>
+</div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+  <p>
+  <strong>Areaseguridad:</strong>
+  <%= @institucion.areaseguridad %>
+</p></div></td>
+      <td>
+  <div class="field">
+<p>
+  <strong>Areaotros:</strong>
+  <%= @institucion.areaotros %>
+</p></div></td>
+      <td>  <div class="field">
+ <p>
+  <strong>Areadetalle:</strong>
+  <%= @institucion.areadetalle %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+  <p>
+  <strong>Activacionesautomaticas:</strong>
+  <%= @institucion.activacionesautomaticas %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+  <p>
+  <strong>Medioradio:</strong>
+  <%= @institucion.medioradio %>
+</p></div></td>
+      <td>  <div class="field">
+ <p>
+  <strong>Mediotv:</strong>
+  <%= @institucion.mediotv %>
+</p></div></td>
+      <td>
+  <div class="field">
+ <p>
+  <strong>Mediofrecuencia:</strong>
+  <%= @institucion.mediofrecuencia %>
+</p>
+</div></td>
+  <td><div class="field">
+<p>
+  <strong>Mediollamadas:</strong>
+  <%= @institucion.mediollamadas %>
+</p></div></td>
+  <td><div class="field">
+<p>
+  <strong>Otros:</strong>
+  <%= @institucion.otros %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td> <div class="field">
+  <p>
+  <strong>Mediosdetalles:</strong>
+  <%= @institucion.mediosdetalles %>
+</p></div></td>
+      <td>
+  <div class="field">
+ <p>
+  <strong>Requerimientosuperios:</strong>
+  <%= @institucion.requerimientosuperios %>
+</p>
+</div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Requerimientosuperiosdetalle:</strong>
+  <%= @institucion.requerimientosuperiosdetalle %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td><div class="field">
+  <p>
+  <strong>Requerimientootrodetalle:</strong>
+  <%= @institucion.requerimientootrodetalle %>
+</p></div></td>
+      <td>  <div class="field">
+  <p>
+  <strong>Observaciones:</strong>
+  <%= @institucion.observaciones %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+<p>
+  <strong>Situacionesactual:</strong>
+  <%= @institucion.situacionesactual %>
+</p></div></td>
+      <td>  <div class="field">
+  <p>
+  <strong>Trabajosiniciales:</strong>
+  <%= @institucion.trabajosiniciales %>
+</p></div></td>
+      <td><div class="field">
+<p>
+  <strong>Caracteristicasestructurales:</strong>
+  <%= @institucion.caracteristicasestructurales %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+   <p>
+  <strong>Consideracionespeciales:</strong>
+  <%= @institucion.consideracionespeciales %>
+</p></div></td>
+      <td>  <div class="field">
+<p>
+  <strong>Estadotiempo:</strong>
+  <%= @institucion.estadotiempo %>
+</p> </div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Mapasderiesgo:</strong>
+  <%= @institucion.mapasderiesgo %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+  <p>
+  <strong>Seguridadyproteccion:</strong>
+  <%= @institucion.seguridadyproteccion %>
+</p>
+</div></td>
+      <td> <div class="field">
+  <p>
+  <strong>Planosdellugar:</strong>
+  <%= @institucion.planosdellugar %>
+</p></div></td>
+      <td>  <div class="field">
+ <p>
+  <strong>Evacuaionemergencia:</strong>
+  <%= @institucion.evacuaionemergencia %>
+</p></div></td>
+    </tr>
+     <tr>
+      <td>  <div class="field">
+  <p>
+  <strong>Estadisticas:</strong>
+  <%= @institucion.estadisticas %>
+</p></div></td>
+      <td> <div class="field">
+ <p>
+  <strong>Temasdesalud:</strong>
+  <%= @institucion.temasdesalud %>
+</p>
+</div></td>
+      <td><div class="field">
+ <p>
+  <strong>Accionotro:</strong>
+  <%= @institucion.accionotro %>
+</p> </div></td>
+    </tr>
+    <h5>estan capacitados en sistema de comando de incedentes</h5>
+     <tr>
+      <td>
+  <div class="field">
+  <p>
+  <strong>Acciondetalle:</strong>
+  <%= @institucion.acciondetalle %>
+</p></div></td>
+      <td>
+
+  <div class="field">
+   <p>
+  <strong>Capacitadosincidentes:</strong>
+  <%= @institucion.capacitadosincidentes %>
+</p></div>
+</td>
+      <td>  <div class="field">
+  <p>
+  <strong>Capacitadosobservaciones:</strong>
+  <%= @institucion.capacitadosobservaciones %>
+</p></div></td>
+    </tr>
+  </tbody>
+</table>
+
+  <div class="field">
+  <p>
+  <strong>Coberturageogracia:</strong>
+  <%= @institucion.coberturageogracia %>
+</p></div>
+
+  <div class="field">
+ <p>
+  <strong>Brazosoperativosareas:</strong>
+  <%= @institucion.brazosoperativosareas %>
+</p></div>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Personal</th>
+      <th scope="col">SI/NO</th>
+      <th scope="col">Numero de Personas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Administrativo</td>
+      <td>  <div class="field">
+
+  <%= @institucion.recursoadministrativo %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.recursoadministrativo %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Operativo Total</td>
+      <td>  <div class="field">
+  <%= @institucion.recursosoperativo %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.recursosoperativopersonas %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Operativo Activo</td>
+      <td>  <div class="field">
+  <%= @institucion.operativoactivo %>
+  </div></td>
+      <td><div class="field">
+  <%= @institucion.operativoactivopersonas %>
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">4</th>
+      <td>Reserva</td>
+      <td> <div class="field">
+
+  <%= @institucion.pasivosenreserva %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.pasivosenreservapersonas %>
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">5</th>
+      <td>Primera Respuesta a incidentes con materias peligrosas</td>
+      <td>  <div class="field">
+  <%= @institucion.primap %>
+  </div>
+</td>
+      <td>  <div class="field">
+  <%= @institucion.primapersonas %>
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">6</th>
+      <td>Rescate en Estructuras Copalsadas Nivel Liviano(CRECL)</td>
+      <td> <div class="field">
+  </div></td>
+      <td>  <div class="field">
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">7</th>
+      <td>Busqueda y rescate en estructuras colapsadas(BREC)</td>
+      <td>
+  <div class="field">
+  </div></td>
+      <td>  <div class="field">
+  </div></td>
+    </tr>
+        <tr>
+      <th scope="row">8</th>
+      <td>Busqueda y Rescate Acuatica</td>
+      <td>
+  <div class="field">
+  <%= @institucion.especidalidadrescateactuatico %>
+  </div></td>
+      <td><div class="field">
+  <%= @institucion.especialidadrescatepersonas %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">9</th>
+      <td>Manejador de Perros</td>
+      <td> <div class="field">
+  <%= @institucion.manejadorperros %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.manejadorperrospersona %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">10</th>
+      <td>Sistema de comando de incedentes (CBSCI)</td>
+      <td>
+  <div class="field">
+  <%= @institucion.cbsci %>
+  </div></td>
+      <td> <div class="field">
+  <%= @institucion.cbscipersonas %>
+  </div>
+</td>
+    </tr>
+      <tr>
+      <th scope="row">11</th>
+      <td>Extincion de incendios urbanos</td>
+      <td><div class="field">
+  <%= @institucion.extincionincendiosurbanos %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.extincionserviciosurbanospersonas %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">12</th>
+      <td>Incendios Forestales</td>
+      <td> <div class="field">
+  <%= @institucion.incendiosforestales %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.incendiosforestalespersonas %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">13</th>
+      <td>Medicos</td>
+      <td>
+
+  <div class="field">
+  <%= @institucion.medicos %>
+  </div></td>
+      <td>  <div class="field">
+
+  <%= @institucion.numeromedicos %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">14</th>
+      <td>Soporte basico de vida (SBV)</td>
+      <td>  <div class="field">
+  <%= @institucion.sbv %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.sbv %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">15</th>
+      <td>Asistente de primeros auxilios avanzado (APAA)</td>
+      <td><div class="field">
+  <%= @institucion.appa %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.appapersonas %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">16</th>
+      <td>Instrutores CPI</td>
+      <td>  <div class="field">
+  <%= @institucion.cpi %>
+  </div></td>
+      <td><div class="field">
+  <%= @institucion.cpipersonas %>
+  </div></td>
+    </tr>
+      <tr>
+      <th scope="row">17</th>
+      <td>Comunicaciones</td>
+      <td>  
+  <div class="field">
+  <%= @institucion.especilidadcomunicaciones %>
+  </div></td>
+      <td>  <div class="field">
+
+  <%= @institucion.especidalidadcomunicacionespersonas %>
+  </div>
+</td>
+    </tr>
+      <tr>
+      <th scope="row">18</th>
+      <td>Logistica</td>
+      <td>  <div class="field">
+
+  <%= @institucion.especialidadlogistica %>
+  </div></td>
+      <td>
+  <div class="field">
+ 
+  <%= @institucion.especialidadlogicasticapersonas %>
+  </div></td>
+    </tr>
+  </tbody>
+</table>
+  <h5>Equipamiento</h5>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tipo de vehiculos disponibles</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Capacidad de Personas</th>
+      <th scope="col">Observaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th scope="row">Ambulancias</th>
+      <td>  <div class="field">
+  <%= @institucion.ambulanciascantidad %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.ambulanciasestado %>
+  </div></td>
+      <td><div class="field">
+  <%= @institucion.ambulanciascapacidadpersonas %>
+  </div></td>
+  <td>  <div class="field">
+  <%= @institucion.ambulanciasobservaciones %>
+  </div></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Transporte Liviano</th>
+      <td> <div class="field">
+  <%= @institucion.transliviano %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.translivianoestado %>
+  </div>
+</td>
+      <td>
+
+  <div class="field">
+  <%= @institucion.translivianopersonas %>
+  </div></td>
+  <td> <div class="field">
+  <%= @institucion.translivianobservaciones %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Transporte Pesado</th>
+      <td>
+  <div class="field">
+  <%= @institucion.transpesado %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.transpesadoestado %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.transpesadopersonas %>
+  </div></td>
+  <td> <div class="field">
+  <%= @institucion.transpesadosobservaciones %>
+  </div></td>
+    </tr>
+     <tr>
+      <th scope="row">Patrullas</th>
+      <td>
+  <div class="field">
+
+  <%= @institucion.patrullas %>
+  </div></td>
+      <td>  <div class="field">
+
+  <%= @institucion.patrullasestado %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.patrullaspersonas %>
+  </div></td>
+      <td> <div class="field">
+  <%= @institucion.patrullasobservaciones %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Carros Bomberos</th>
+      <td> 
+  <div class="field">
+  <%= @institucion.carrosbomberos %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.carrosbomberosestado %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.carrosbomberospersonas %>
+  </div></td>
+      <td>  <div class="field">
+
+  <%= @institucion.carrosbomberosobservaciones %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Cisternas</th>
+      <td>  <div class="field">
+  <%= @institucion.cisternas %>
+  </div></td>
+      <td><div class="field">
+  <%= @institucion.cisternasestado %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.cisternaspersonas %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.cisternasobservaciones %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Maquinaria Pesada</th>
+      <td>  <div class="field">
+  <%= @institucion.maquinariapesada %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.maquinariapesadaestado %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.maquinariapesadapersonas %>
+  </div></td>
+      <td>  <div class="field">
+  <%= @institucion.maquinariapesadaobservaciones %>
+  </div></td>
+    </tr>
+  </tbody>
+  <h5>Equipos de Telecomunicaciones y tecnologia</h5>
+</table>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Equipos</th>
+      <th scope="col">cantidad</th>
+      <th scope="col">estado(operable/inoperable)</th>
+      <th scope="col">observaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Radios</th>
+      <td>
+  <div class="field">
+  <%= @institucion.equiporadios %>
+  </div></td>
+      <td>  <div class="field">
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.equiporadioobservaciones %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Comunicacion Satelital</th>
+      <td>
+  <div class="field">
+  <%= @institucion.comunicacionesatelital %>
+  </div>
+</td>
+      <td>  <div class="field">
+  <%= @institucion.comunicacionsatelital %>
+  </div></td>
+      <td>
+  <div class="field">
+  <%= @institucion.satelitalobservaciones %>
+  </div></td>
+    </tr>
+    <tr>
+      <th scope="row">Gps</th>
+      <td> <div class="field">
+  <%= @institucion.gps %>
+  </div></td>
+      <td> <div class="field">
+  <%= @institucion.gpsestado %>
+  </div></td>
+      <td> <div class="field">
+  <%= @institucion.gpsobservaciones %>
+  </div></td>
+    </tr>
+     
+  </tbody>
+</table>
+
+ 
+
+<%= link_to 'Editar', edit_institucion_path(@institucion), :class=>"btn btn-primary" %> |
+<%= link_to 'Atras', :class => "btn btn-warning"%>
