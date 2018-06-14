@@ -1,21 +1,19 @@
-
- <div class="content-wrapper", style='width: 100%';>
-    <h3 class="text-primary mb-4">Login</h3>
-    <div class="row mb-2", style='width: 100%;'>
+ <div class="content-wrapper" style = "margin-left: 0; width:100%">
+    <div class="row ", style='width: 100%;'>
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-block", style='width: 800px;'>
-                    <h4 class="card-title mb-4">Ingresar a Cuenta</h4>
+                <div class="card-block">
+                    <h4 class="card-title mb-4"></h4>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :Correo %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:'form-control p-input' %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :Contraseña %><br />
+    <%= f.password_field :password, autocomplete: "off" , class:'form-control p-input' %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -26,7 +24,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in", :class=>"btn btn-primary"%>
+    <%= f.submit "Ingresar", :class=>"btn btn-primary"%>
   </div>
 <% end %>
 

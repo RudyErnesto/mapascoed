@@ -4,7 +4,19 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @q = params[:q]
+    if @q
+      @locations = Location.where("address like ?", "%#{@q}%") 
+    else
+      @locations = Location.all
+    end
+    @numeroincendios = Location.where(tipo: "incendio").count
+    @numeroinundacion = Location.where(tipo: "inundacion").count
+    @numerogranizada = Location.where(tipo: "granizada").count
+    @numerosequias = Location.where(tipo: "sequia").count
+    @numeroterremotos = Location.where(tipo: "terremeto").count
+    @numeroderrumbe = Location.where(tipo: "derrumbe").count
+    @numerodeslizamientos = Location.where(tipo: "deslizamientos").count
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
     marker.lat location.latitude
     marker.lng location.longitude
@@ -21,12 +33,13 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-    @hash = Gmaps4rails.build_markers(@location) do |locations, marker|
+      @hash = Gmaps4rails.build_markers(@location) do |locations, marker|
       marker.lat locations.latitude
       marker.lng locations.longitude
       marker.infowindow locations.description
       marker.json({title: locations.title})
       end
+      
   end
 
   # GET /locations/new

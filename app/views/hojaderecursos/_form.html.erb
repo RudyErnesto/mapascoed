@@ -2,7 +2,6 @@
   <% if hojaderecurso.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(hojaderecurso.errors.count, "error") %> prohibited this hojaderecurso from being saved:</h2>
-
       <ul>
       <% hojaderecurso.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -18,8 +17,24 @@
                 <div class="card-block", style='width: 800px;'>
                     <h4 class="card-title mb-4">Informacion de Hoja de Recursos</h4>
                     <form class="forms-sample" >
-  <h5>Informacion General de la Institucion</h5>
-  <table class="table">
+                    <div class="container">
+  <div class="accordion-option">
+    <h3 class="title"></h3>
+    <a href="javascript:void(0)" class="toggle-accordion active" accordion-id="#accordion"></a>
+  </div>
+  <div class="clearfix"></div>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+           <h5>Informacion General de la Institucion</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapseOne" class="collapse" role="tabpanel">
+        <div class="panel-body">
+        <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -71,7 +86,19 @@
     <%= form.label :Categoria_de_recursos %>
     <%= form.text_field :categoriarecursos, id: :hojaderecurso_categoriarecursos, class:'form-control p-input' %>
   </div>
-  <h5>Capacidad de Respuesta</h5>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+     <h5>Capacidad de Respuesta</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapseTwo" class="collapse" role="tabpanel">
+        <div class="panel-body">
   <table class="table">
   <thead>
     <tr>
@@ -169,7 +196,6 @@
     <%= form.label :Tiempo %>
     <%= form.number_field :tiempocomida, id: :hojaderecurso_tiempocomida, class:'form-control p-input' %>
   </div></td>
- 
     </tr>
   </tbody>
 </table>
@@ -182,7 +208,20 @@
     <%= form.label :Tiempo_de_respuesta %>
     <%= form.time_select :tiemporespesta, id: :hojaderecurso_tiemporespesta, class:'form-control p-input' %>
   </div>
-<table class="table table-dark">
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          <h5>Base de Operaciones</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="collapse " role="tabpanel" >
+        <div class="panel-body">
+         <table class="table table-dark">
   <thead>
     <tr>
       <th scope="col">Base de Operaciones</th>
@@ -283,7 +322,20 @@
     <%= form.label :Otros_requemientos_Logistico %>
     <%= form.text_area :otrorequerimientologistico, id: :hojaderecurso_otrorequerimientologistico, class:'form-control p-input' %>
   </div>
-  <h5>Contactos</h5>
+        </div>
+      </div>
+    </div>
+       <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="true" aria-controls="collapseThree">
+         <h5>Contactos</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapsefour" class="collapse " role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+         
   <table class="table">
   <thead>
     <tr>
@@ -382,11 +434,23 @@
     <%= form.text_field :gradoycargo, id: :hojaderecurso_gradoycargo, class:'form-control p-input' %>
   </div>
 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  
   
 <% end %>
 
  <div>
-                            <button type="submit" class="btn btn-primary">Guardar Funcionario</button>
+                            <button type="submit" class="btn btn-primary">Guardar Hoja de Recursos</button>
                         </div>
 </div>
  </form>

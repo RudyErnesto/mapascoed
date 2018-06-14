@@ -1,17 +1,97 @@
-<p id="notice"><%= notice %></p>
-<div class="content-wrapper">
-    <h3 class="text-primary mb-4">Historial Incidentes</h3>
-    <div class="row mb-2">
-        <div class="col-lg-12">
-<table>
+<div class="panel panel-primary">
+    <div class="panel-heading"><h4 class="panel-title" style="text-align:center">Mapa de Eventos</h4></div>
+      <div class="panel-body", style='width:730px; height: 400px;'>
+        <div id="map"> </div> 
+      </div>
+      <div class="panel-footer"><%= link_to 'Nuevo Incidente', new_location_path, class: 'btn btn-success' %></div>
+    </div>
+</div>
+<div class="panel panel-success">
+  <div class="panel-heading"><h4 class="panel-title" style="text-align:center">Reporte de cantidad total por cada Emergencia</h4></div>
+    <div class="panel-body">
+      <canvas id="chart" width="800" height="500"></canvas>
+      <table id="chartData">
+    <tr>
+      <th>Emergencias</th><th>Total (#)</th>
+     </tr>
+
+    <tr style="color: #0DA068">
+      <td>Incendios</td><td><%= @numeroincendios %></td>
+    </tr>
+
+    <tr style="color: #194E9C">
+      <td>Inundaciones</td><td><%= @numeroinundacion %></td>
+    </tr>
+
+    <tr style="color: #ED9C13">
+      <td>Granizadas</td><td><%= @numerogranizada %></td>
+    </tr>
+
+    <tr style="color: #ED5713">
+      <td>Sequias</td><td><%= @numerosequias %></td>
+    </tr>
+
+    <tr style="color: #057249">
+      <td>Terremotos</td><td><%= @numeroterremotos %></td>
+    </tr>
+
+    <tr style="color: #5F91DC">
+      <td>Derrumbes</td><td><%= @numeroderrumbe %></td>
+    </tr>
+
+    <tr style="color: #F88E5D">
+      <td>Deslizamientos</td><td><%= @numerodeslizamientos %></td>
+    </tr>
+    <!--
+    <tr style="color: #F2745D">
+      <td>Septiembre</td><td>4</td>
+    </tr>
+    <tr style="color: #A28552">
+      <td>Octubre</td><td>2</td>
+    </tr>
+    <tr style="color: #788E5D">
+      <td>Noviembre</td><td>6</td>
+    </tr>
+    <tr style="color: #623E5D">
+      <td>Diciembe</td><td>1</td>
+    </tr>
+    -->
+  </table>
+  <div hidden class="wideBox">
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><h4 class="panel-title" style="text-align:center">Desastres Anuales</h4></h3>
+  </div>
+  <div class="panel-body" >
+    <canvas id="line-chart" ></canvas>
+  </div>
+  <div class="panel-footer"></div>
+</div>
+<div class="panel panel-info">
+<div class="panel-heading"><h4 class="panel-title" style="text-align:center">Total de Emergencias durante el año</h4></div>
+  <div class="panel-body" >
+    <canvas id="bar-chart" width="800" height="250"></canvas>
+  </div>
+  <div class="panel-footer"></div>
+</div>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4 class="panel-title" style="text-align:center">Lista de Eventos</h4>
+    <form>
+      <input name="q" <%= @q %> >
+      <button type="submit">Buscar</button>
+      </form>
+  </div>
+  <div class="panel-body">
+    <table class="table table-dark">
     
   <thead>
     <tr>
-      <th>Latitud</th>
-      <th>Longitud</th>
       <th>Direccion</th>
       <th>Descripcion</th>
-      <th>Nombre</th>
+      <th>Tipo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,11 +100,9 @@
 
     <% @locations.each do |location| %>
       <tr>
-        <td><%= location.latitude %></td>
-        <td><%= location.longitude %></td>
         <td><%= location.address %></td>
         <td><%= location.description %></td>
-        <td><%= location.title %></td>
+        <td><%= location.tipo %></td>
         <td><%= link_to 'Mostrar', location, :class => 'btn btn-primary'%></td>
         <td><%= link_to 'Editar', edit_location_path(location), :class => 'btn btn-warning' %></td>
         <td><%= link_to 'Eliminar', location, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
@@ -37,18 +115,10 @@
  
     
 </table>
-
-<br>
-
-<p>
-<%= link_to 'Nuevo Incidente', new_location_path, class: 'btn btn-success' %>
-<p>
-    <strong>Mapa de Incidentes</strong>
-   
-  </p>
-<div style='width: 1000px;'>
-  <div id="map" style='width: 1000px; height: 400px;'></div>
+  </div>
 </div>
+
+
 <script type="text/javascript">
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
@@ -56,5 +126,76 @@
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
   });
+</script>
+<script>
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ['Enero','Febrero','Marzo','Abril','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+    datasets: [{ 
+        data: [0,0,0,0,0,0,0,0,0,<%= @numeroincendios%>,0,0],
+        label: "Incendios",
+        borderColor: "#3e95cd",
+        fill: false
+      }, { 
+        data: [0,0,0,0,<%= @numeroinundacion%>,0,0,0,0],
+        label: "Inundaciones",
+        borderColor: "#8e5ea2",
+        fill: false
+      }, { 
+        data: [0,0,0,0,0,0,0,0,0,0,0,<%= @numeroderrumbe%>],
+        label: "Derrumbes",
+        borderColor: "#3cba9f",
+        fill: false
+      }, { 
+        data: [0,0,0,0,0,0,0,0,0,0,0,0],
+        label: "Deslizamientos",
+        borderColor: "#e8c3b9",
+        fill: false
+      }, { 
+        data: [0,0,0,<%=@numeroterremotos%>,0,0,0,0,0,0,0,0],
+        label: "Terremoto",
+        borderColor: "#c45850",
+        fill: false
+      },
+      { 
+        data: [0,0,0,0,0,0,0,0,0,0,0,0],
+        label: "Sequia",
+        borderColor: "#c42250",
+        fill: false
+      },
+      
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Desastres Durante todo el año'
+    }
+  }
+});
+</script>
+<script>
+// Bar chart
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["Enero", "Febrero", "Marzo", "Abril", "Junio", "Julio","Agosto", "Septiembre", "Octubre","Noviembre", "Diciembre"],
+      datasets: [
+        {
+          label: "Emergencias (Cantidad Total)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850", "#8E44AD","#F5B041" ,"#a23185 " ,"#a72550","#E74C3C","#F7DC6F"],
+          data: [0,0,0,<%=@numeroterremotos%>,<%= @numeroterremotos%>,0,0,0,0,<%= @numeroincendios%>,<%= @numeroderrumbe%>]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Emergencias Registradas'
+      }
+    }
+});
 </script>
 

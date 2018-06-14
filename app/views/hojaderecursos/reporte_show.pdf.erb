@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>hoja de recursos</title>
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<h1>Hoja de Recursos</h1>
+<%= wicked_pdf_image_tag "logo_star_black.png" %>
 <p id="notice"><%= notice %></p>
   <div class="content-wrapper", style='width: 100%';>
     <h3 class="text-primary mb-4">Hoja de Recursos</h3>
@@ -6,7 +16,6 @@
             <div class="card">
                 <div class="card-block", style='width: 800px;'>
                     <h4 class="card-title mb-4">Informacion de Hoja de Recursos</h4>
-                      
   <table class="table">
   <thead>
     <tr>
@@ -350,5 +359,4 @@
   <%= @hojaderecurso.gradoycargo %>
   </div>
 
-<%= link_to 'Editar', edit_hojaderecurso_path(@hojaderecurso) ,class: "btn btn-warning"%> |
-<%= link_to 'Atras', hojaderecursos_path ,class: "btn btn-primary"%>
+</body>

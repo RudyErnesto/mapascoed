@@ -5,6 +5,12 @@ class OrganizacionsController < ApplicationController
   # GET /organizacions.json
   def index
     @organizacions = Organizacion.all
+    @numeroincendios = Location.where(tipo: "incendio").count
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template:'organizacions/reporte', pdf: 'reporte', layaout: 'pdf.html'}
+    end
   end
 
   # GET /organizacions/1

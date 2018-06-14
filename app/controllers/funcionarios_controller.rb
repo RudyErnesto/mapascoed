@@ -4,7 +4,12 @@ class FuncionariosController < ApplicationController
   # GET /funcionarios
   # GET /funcionarios.json
   def index
-    @funcionarios = Funcionario.all
+    @q = params[:q]
+    if @q
+      @funcionarios = Funcionario.where("nombre like ?", "%#{@q}%") 
+    else
+      @funcionarios = Funcionario.all
+    end
   end
 
   # GET /funcionarios/1

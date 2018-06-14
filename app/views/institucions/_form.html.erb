@@ -18,7 +18,23 @@
                 <div class="card-block", style='width: 800px;'>
                     <h4 class="card-title mb-4">Formulario Instituciones</h4>
                     <form class="forms-sample" >
-                    <h5>Datos Generales</h5>
+<div class="container">
+  <div class="accordion-option">
+ 
+    <a href="javascript:void(0)" class="toggle-accordion active" accordion-id="#accordion"></a>
+  </div>
+  <div class="clearfix"></div>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h5>Datos Generales</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
   <div class="field">
     <%= form.label :nombre %>
     <%= form.text_field :nombre, id: :institucion_nombre , class:'form-control p-input'%>
@@ -117,10 +133,24 @@
     </tr>
   </tbody>
 </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+       <h5>Como se clasifica la institucion?</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+
 
 <table class="table">
   <thead>
-  <h5>Como se clasifica la institucion?</h5>
+
   </thead>
   <tbody>
     <tr>
@@ -354,13 +384,21 @@
     <%= form.text_area :especialidadesmandato, id: :institucion_especialidadesmandato , class:'form-control p-input'%>
   </div>
 
-
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapseThree">
+              <h5>Que servicios brinda en primera respuesta</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
   <table class="table">
   <thead>
-    
-      <h5>Que servicios brinda en primera respuesta</h5>
- 
-    
   </thead>
   <tbody>
     <tr>
@@ -450,11 +488,33 @@
     <%= form.label :otros %>
     <%= form.text_area :serviciodetalle, id: :institucion_serviciodetalle , class:'form-control p-input'%>
   </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapseThree">
+          En que tipo de eventos adversos actua en primera respuesta  +
+        </a>
+      </h4>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+ 
+
+                  
+
+
+
+
+
+
 
   <table class="table">
   <thead>
     
-      <th scope="col">En que tipo de eventos adversos actua en primera respuesta</th>
+      <th scope="col"></th>
   
   </thead>
   <tbody>
@@ -573,7 +633,20 @@
     <%= form.label :eventosfrecuentes %>
     <%= form.text_area :eventosfrecuentes, id: :institucion_eventosfrecuentes, class:'form-control p-input' %>
   </div>
-<h5>Cuales son sus capacidades</h5>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapseThree">
+         <h5>Cuales son sus capacidades</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+
 <table class="table">
   <thead>
     <h5>posee planes o protocolos de accion</h5>
@@ -834,6 +907,20 @@
     <%= form.label :brazosoperativosareas %>
     <%= form.text_area :brazosoperativosareas, id: :institucion_brazosoperativosareas , class:'form-control p-input'%>
   </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true" aria-controls="collapseThree">
+        <h5>Personal</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+
   <table class="table">
   <thead>
     <tr>
@@ -1045,7 +1132,19 @@
     </tr>
   </tbody>
 </table>
-  <h5>Equipamiento</h5>
+        </div>
+      </div>
+    </div>
+     <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="true" aria-controls="collapseThree">
+            <h5>Equipamiento</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
   <table class="table">
   <thead>
     <tr>
@@ -1234,6 +1333,25 @@
      
   </tbody>
 </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
 

@@ -4,12 +4,27 @@ class RecursoEventosController < ApplicationController
   # GET /recurso_eventos
   # GET /recurso_eventos.json
   def index
-    @recurso_eventos = RecursoEvento.all
+    @q = params[:q]
+    if @q
+      @recurso_eventos = RecursoEvento.where("asignadoa like ?", "%#{@q}%") 
+    else
+      @recurso_eventos = RecursoEvento.all
+    end
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template:'recurso_eventos/reporte', pdf: 'reporte', layaout: 'pdf.html'}
+    end
   end
 
   # GET /recurso_eventos/1
   # GET /recurso_eventos/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template:'locations/reporte', pdf: 'reporte', layaout: 'pdf.html'}
+    end
   end
 
   # GET /recurso_eventos/new

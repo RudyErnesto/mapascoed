@@ -4,12 +4,28 @@ class InstitucionsController < ApplicationController
   # GET /institucions
   # GET /institucions.json
   def index
-    @institucions = Institucion.all
+    @q = params[:q]
+    if @q
+      @institucions = Institucion.where("nombre like ?", "%#{@q}%") 
+    else
+      @institucions = Institucion.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template:'institucions/reporte', pdf: 'reporte', layaout: 'pdf.html'}
+    end
   end
 
   # GET /institucions/1
   # GET /institucions/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template:'institucions/reporte_show', pdf: 'reporte', layaout: 'pdf.html'}
+    end
   end
 
   # GET /institucions/new

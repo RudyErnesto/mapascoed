@@ -4,15 +4,36 @@ class HojaderecursosController < ApplicationController
   # GET /hojaderecursos
   # GET /hojaderecursos.json
   def index
-    @hojaderecursos = Hojaderecurso.all
-    @palabra = ''
-    @palabra = params[:palabra]
-    @hojaderecurso = Hojaderecurso.where("nombrequipo LIKE '#{@palabra}%'")
+    @Gasolina = 20
+    @Comida = 3
+    @Hombres = 15
+    @Perros = 4
+    @Vehiculos = 5
+    @Agua = 120
+    @Dinero = 14
+
+    @q = params[:q]
+    if @q
+      @hojaderecursos = Hojaderecurso.where("nombrequipo like ?", "%#{@q}%") 
+    else
+      @hojaderecursos = Hojaderecurso.all
+    end
+    @gasolinatotal = Hojaderecurso.sum("gasolina")
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template:'hojaderecursos/reporte', pdf: 'reporte', layaout: 'pdf.html.erb'}
+    end
   end
 
   # GET /hojaderecursos/1
   # GET /hojaderecursos/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template:'hojaderecursos/reporte_show', pdf: 'reporte', layaout: 'pdf.html'}
+    end
   end
 
   # GET /hojaderecursos/new

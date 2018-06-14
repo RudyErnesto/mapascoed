@@ -5,6 +5,11 @@ class RecursosController < ApplicationController
   # GET /recursos.json
   def index
     @recursos = Recurso.all
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template:'recursos/reporte', pdf: 'reporte', layaout: 'pdf.html'}
+    end
   end
 
   # GET /recursos/1
