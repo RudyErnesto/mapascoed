@@ -8,7 +8,8 @@ class LocationsController < ApplicationController
     if @q
       @locations = Location.where("address like ?", "%#{@q}%") 
     else
-      @locations = Location.all
+    @locations = current_user.locations.all.order(created_at: :desc)
+     # @locations = Location.where user_id: current_user.id
     end
     @numeroincendios = Location.where(tipo: "incendio").count
     @numeroinundacion = Location.where(tipo: "inundacion").count
@@ -33,6 +34,8 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+      @recurso_evento = RecursoEvento.new
+      @recurso_evento.location = @location
       @hash = Gmaps4rails.build_markers(@location) do |locations, marker|
       marker.lat locations.latitude
       marker.lng locations.longitude
@@ -54,7 +57,8 @@ class LocationsController < ApplicationController
   # POST /locations
   # POST /locations.json
   def create
-    @location = Location.new(location_params)
+    @location = current_user.locations.new(location_params)
+    #@location = Location.new(location_params)
 
     respond_to do |format|
       if @location.save

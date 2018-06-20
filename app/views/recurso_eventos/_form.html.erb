@@ -14,7 +14,7 @@
                     <form class="forms-sample">
                       <div class="field">
                         <%= form.label :"solicitado por:  " %>
-                        <%= form.select :solicitado,options_for_select(Organizacion.all.pluck(:nombre, :id)) %>
+                        <%= form.select :solicitado,options_for_select(Institucion.all.pluck(:nombre, :id)) %>
                       </div>
                     
                       <div class="field">

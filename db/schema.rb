@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180420210002) do
+ActiveRecord::Schema.define(version: 20180619194511) do
 
   create_table "funcionarios", force: :cascade do |t|
     t.string "nombre"
@@ -319,6 +319,8 @@ ActiveRecord::Schema.define(version: 20180420210002) do
     t.text "rutaingreso"
     t.text "mensajedeseguridad"
     t.string "comandante"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "organizacions", force: :cascade do |t|
@@ -347,6 +349,8 @@ ActiveRecord::Schema.define(version: 20180420210002) do
     t.text "observaciones"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "location_id"
+    t.index ["location_id"], name: "index_recurso_eventos_on_location_id"
   end
 
   create_table "recursos", force: :cascade do |t|
@@ -357,6 +361,8 @@ ActiveRecord::Schema.define(version: 20180420210002) do
     t.string "estado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "location_id"
+    t.index ["location_id"], name: "index_recursos_on_location_id"
   end
 
   create_table "users", force: :cascade do |t|
