@@ -4,6 +4,10 @@ class RecursosController < ApplicationController
   # GET /recursos
   # GET /recursos.json
   def index
+    @reparacion = Recurso.where(estado: "reparacion").count
+    @disponible = Recurso.where(estado: "disponible").count
+    @nodisponible = Recurso.where(estado: "nodisponible").count
+    @asignado = Recurso.where(estado: "asignado").count
     @recursos = Recurso.all
     respond_to do |format|
       format.html

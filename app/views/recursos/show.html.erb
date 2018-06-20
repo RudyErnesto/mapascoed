@@ -1,32 +1,37 @@
 <p id="notice"><%= notice %></p>
-<div class="content-wrapper">
+
   <h3 class="text-primary mb-4">Organizacion</h3>
-  <div class="row mb-2">
-      <div class="col-lg-12">
+     <form class="forms-sample">
 <p>
+ <div class="form-control p-input">
   <strong>Nombre:</strong>
   <%= @recurso.nombre %>
 </p>
-
+</div>
 <p>
+ <div class="form-control p-input">
   <strong>Clase:</strong>
   <%= @recurso.clase %>
 </p>
-
+</div>
 <p>
+ <div class="form-control p-input">
   <strong>Tipo:</strong>
   <%= @recurso.tipo %>
 </p>
-
+</div>
 <p>
+ <div class="form-control p-input">
   <strong>Matricula:</strong>
   <%= @recurso.matricula %>
 </p>
-
+</div>
 <p>
+ <div class="form-control p-input">
   <strong>Estado:</strong>
   <%= @recurso.estado %>
 </p>
-
+</div>
+</form>
 <%= link_to 'Editar', edit_recurso_path(@recurso), :class => 'btn btn-success' %> |
 <%= link_to 'Atras', recursos_path, :class => 'btn btn-info' %>

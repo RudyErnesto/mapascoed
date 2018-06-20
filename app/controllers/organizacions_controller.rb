@@ -4,7 +4,12 @@ class OrganizacionsController < ApplicationController
   # GET /organizacions
   # GET /organizacions.json
   def index
-    @organizacions = Organizacion.all
+    if current_user.admin?
+      @organizacions = Organizacion.all.order(created_at: :desc)
+    else
+      @organizacions = current_user.locations.all.order(created_at: :desc)
+    end
+  
     @numeroincendios = Location.where(tipo: "incendio").count
     respond_to do |format|
       format.html

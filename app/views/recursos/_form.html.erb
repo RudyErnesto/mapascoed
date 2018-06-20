@@ -37,7 +37,7 @@
                   
                       <div class="field">
                           <%= form.label :Estado %>
-                          <%= form.select(:estado,options_for_select([['disponible', "disponible"], ['No disponible',"no disponible"], ['Reparacion',"reparacion"], ['asignado',"asignado"]], 4), class: "form-control p-input" )%>
+                          <%= form.select(:estado,options_for_select([['disponible', "disponible"], ['No disponible',"nodisponible"], ['Reparacion',"reparacion"], ['asignado',"asignado"]], 4), class: "form-control p-input" )%>
                         </div>
             
     
@@ -49,23 +49,8 @@
                             <button type="submit" class="btn btn-primary">Guardar Recurso</button>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</body>
 
-<footer class="footer">
-    <div class="container-fluid clearfix">
-        <span class="float-right">
-          <a href="#">COOED CBBA</a> &copy; 2017
-      </span>
-    </div>
-</footer>
-</div>
-</div>
-
-</div>
 
 
 <% end %>

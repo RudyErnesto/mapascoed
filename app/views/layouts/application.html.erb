@@ -35,7 +35,9 @@
   <li><%= link_to 'Emergencias', locations_path %></li>
   <li><%= link_to 'Recursos Usados', recurso_eventos_path%></li>
   <li><%= link_to 'Recursos Usados por otros equipos', hojaderecursos_path %></li>
+   <% if current_user.admin? %>
   <li><%= link_to 'Lista de Usuarios', welcomes_path %></li>
+    <% end %>
   <li role="presentation"><%= link_to('Salir', destroy_user_session_path, :method => :delete) %></li>
   <% else %>
   <li ><%= link_to('Registrarse', new_user_registration_path) %></li>

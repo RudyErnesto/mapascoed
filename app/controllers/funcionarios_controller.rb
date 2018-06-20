@@ -10,6 +10,12 @@ class FuncionariosController < ApplicationController
     else
       @funcionarios = Funcionario.all
     end
+    @funcionariosrescate = Funcionario.where(tipo: "rescate").count
+    @funcionariosoficina = Funcionario.where(tipo: "oficina").count
+    @funcionariosmedico = Funcionario.where(tipo: "medico").count
+    @funcionariosbuzo = Funcionario.where(tipo: "buzo").count
+    @funcionariosadministrador = Funcionario.where(tipo: "administrador").count
+    @funcionariosgeneral = Funcionario.where(tipo: "general").count
   end
 
   # GET /funcionarios/1

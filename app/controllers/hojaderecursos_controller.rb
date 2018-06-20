@@ -4,21 +4,32 @@ class HojaderecursosController < ApplicationController
   # GET /hojaderecursos
   # GET /hojaderecursos.json
   def index
-    @Gasolina = 20
-    @Comida = 3
-    @Hombres = 15
-    @Perros = 4
-    @Vehiculos = 5
-    @Agua = 120
-    @Dinero = 14
-
+    @Gasolinatotal = Hojaderecurso.sum(:gasolina)
+    @Comidatotal = Hojaderecurso.sum(:comida)
+    @Hombrestotal = Hojaderecurso.sum(:personasdesplegados)
+    @Perrostotal = Hojaderecurso.sum(:numeroperros)
+    @Vehiculostotal = Hojaderecurso.sum(:vehiculosdesplegados)
+    @Basesdeoperaciones = Hojaderecurso.where(baseoperaciones: true).count
+    @DieselTotal = Hojaderecurso.sum(:diesel)
+    @DieselTotalanual = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).sum(:diesel)
+    @Gasolinatotalanual = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).sum(:gasolina)
+    @equipostotal = Hojaderecurso.count
+    @preciogasolina =Hojaderecurso.average(:preciogasolina)
+    @preciodiesel = Hojaderecurso.average(:preciodiesel)
+    @Totalquipos =Hojaderecurso.sum(:equiposdespleagados)
+    @costogasolina =  @Gasolinatotalanual * @preciogasolina
+    @costodiesel =  @DieselTotalanual * @preciodiesel
+    @Equiposconagua = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).where(agua: true).count
+    @HombresAnual = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).sum(:personasdesplegados)
+    @Totalquipoanual = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).count
+    @Totalvehiculosanul = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).sum(:vehiculosdesplegados)
+    @Totalperrosanual = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).sum(:numeroperros)
     @q = params[:q]
     if @q
       @hojaderecursos = Hojaderecurso.where("nombrequipo like ?", "%#{@q}%") 
     else
       @hojaderecursos = Hojaderecurso.all
     end
-    @gasolinatotal = Hojaderecurso.sum("gasolina")
     respond_to do |format|
       format.html
       format.json

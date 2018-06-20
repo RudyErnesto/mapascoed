@@ -1,38 +1,48 @@
 <p id="notice"><%= notice %></p>
   <h3 class="text-primary mb-4">Funcionario</h3>
-
+  <form class="forms-sample" >
 <p>
+<div class="form-control p-input">
   <strong>Nombre:</strong>
   <%= @funcionario.nombre %>
+  </div>
 </p>
 
 <p>
+<div class="form-control p-input">
   <strong>Apellido:</strong>
   <%= @funcionario.apellido %>
+  </div>
 </p>
 
 <p>
+<div class="form-control p-input">
   <strong>Celular:</strong>
   <%= @funcionario.celular %>
+  </div>
 </p>
 
 <p>
+<div class="form-control p-input">
   <strong>Telefono:</strong>
-  <%= @funcionario.telefono %>
+  <%= @funcionario.telefono %></div>
 </p>
 
 <p>
+<div class="form-control p-input">
   <strong>Correo:</strong>
-  <%= @funcionario.correo %>
+  <%= @funcionario.correo %></div>
 </p>
 <p>
+<div class="form-control p-input">
     <strong>Ci:</strong>
-    <%= @funcionario.ci %>
+    <%= @funcionario.ci %></div>
   </p>
   <p>
+  <div class="form-control p-input">
       <strong>Funcion:</strong>
-      <%= @funcionario.tipo %>
+      <%= @funcionario.tipo %></div>
     </p>
-
+</form>
 <%= link_to 'Editar', edit_funcionario_path(@funcionario) , :class => 'btn btn-warning'%> |
 <%= link_to 'Atras', funcionarios_path , :class => 'btn btn-info'%>

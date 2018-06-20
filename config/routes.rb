@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :welcomes
   resources :organizacions
-  resources :recurso_eventos
   resources :recursos
   resources :funcionarios
+  resources :recurso_eventos
   resources :locations
   root "welcomes#new"
 

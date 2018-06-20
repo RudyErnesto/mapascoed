@@ -8,8 +8,27 @@ class InstitucionsController < ApplicationController
     if @q
       @institucions = Institucion.where("nombre like ?", "%#{@q}%") 
     else
-      @institucions = Institucion.all
+      if current_user.admin?
+        @institucions = Institucion.all.order(created_at: :desc)
+      else
+        @institucions = Institucion.where user_id: current_user.id
+      end
     end
+    @publica = Institucion.where(institucionpublica: 1).count
+    @privada = Institucion.where(institucionprivada: true).count
+    @sinlucro = Institucion.where(sinfinesdelucro: 1).count
+    @voluntarios = Institucion.where(grupovoluntario: true).count
+    @actransporte = Institucion.where(serviciotransporte: true).count
+    @busquedaperros = Institucion.where(serviciobusquedaperros: true).count
+    @telecomunicaciones  = Institucion.where(serviciotelecomunicaciones: true).count
+    @evaluaciondaños =  Institucion.where(servicioevaluacion: true).count
+    @serviciospublicos  = Institucion.where(serviciosaludysaneamiento: true).count
+    @manejomateriales  = Institucion.where(serviciomanejomateriales: true).count
+    @salvamientoacuatico  = Institucion.where(salvamientoacuatico: true).count
+    @busquedaaltura = Institucion.where(serviciobusquedayrescateenaltura: true).count
+    @salud = Institucion.where(serviciosaludysaneamiento: true).count
+    @incendioshurbanos = Institucion.where(serviciosincendiosurbanos: true).count
+    @incendiosforestales = Institucion.where(servicioincendioforestal: true).count
 
     respond_to do |format|
       format.html
@@ -40,8 +59,7 @@ class InstitucionsController < ApplicationController
   # POST /institucions
   # POST /institucions.json
   def create
-    @institucion = Institucion.new(institucion_params)
-
+    @institucion = current_user.institucions.new(institucion_params)
     respond_to do |format|
       if @institucion.save
         format.html { redirect_to @institucion, notice: 'Institucion was successfully created.' }

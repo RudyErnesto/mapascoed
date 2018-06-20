@@ -1,3 +1,4 @@
+
 <%= form_with(model: institucion, local: true) do |form| %>
   <% if institucion.errors.any? %>
     <div id="error_explanation">
@@ -17,7 +18,7 @@
     <a href="javascript:void(0)" class="toggle-accordion active" accordion-id="#accordion"></a>
   </div>
   <div class="clearfix"></div>
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">  
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
@@ -150,7 +151,7 @@
      
       <td><div class="field">
     <%= form.label :institucion_publica %>
-    <%= form.text_field :institucionpublica, id: :institucion_institucionpublica , class:'form-control p-input'%>
+    <%= form.check_box :institucionpublica, id: :institucion_institucionpublica , class:'form-control p-input'%>
   </div></td>
       <td><div class="field">
     <%= form.label :detalle %>
@@ -174,7 +175,7 @@
       
       <td> <div class="field">
     <%= form.label :sin_fines_de_lucro %>
-    <%= form.text_field :sinfinesdelucro, id: :institucion_sinfinesdelucro , class:'form-control p-input'%>
+    <%= form.check_box :sinfinesdelucro, id: :institucion_sinfinesdelucro , class:'form-control p-input'%>
   </div></td>
       <td> <div class="field">
     <%= form.label :detalles %>
@@ -1327,32 +1328,14 @@
   </tbody>
 </table>
         </div>
+        
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 
- 
-
- 
-
- 
-<% end %>
                             <button type="submit" class="btn btn-primary">Guardar institucion</button>
                         </div>
+</body>
+<% end %>

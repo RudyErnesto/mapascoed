@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180619194511) do
+ActiveRecord::Schema.define(version: 20180620151525) do
 
   create_table "funcionarios", force: :cascade do |t|
     t.string "nombre"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20180619194511) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "institucions", force: :cascade do |t|
+  create_table "institucions",  force: :cascade do |t|
     t.string "nombre"
     t.string "personaencargada"
     t.string "cargo"
@@ -295,6 +295,8 @@ ActiveRecord::Schema.define(version: 20180619194511) do
     t.text "gpsobservaciones"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_institucions_on_user_id"
   end
 
   create_table "locations", force: :cascade do |t|

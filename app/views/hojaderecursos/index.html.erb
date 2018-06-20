@@ -22,31 +22,31 @@
      </tr>
 
     <tr style="color: #0DA068">
-      <td>Gasolina</td><td><%= @Gasolina %></td>
+      <td>Gasolina</td><td><%= @Gasolinatotal %></td>
     </tr>
 
     <tr style="color: #194E9C">
-      <td>Comida</td><td><%= @Comida %></td>
+      <td>Diesel</td><td><%= @DieselTotal %></td>
     </tr>
 
     <tr style="color: #ED9C13">
-      <td>Hombres</td><td>50</td>
+      <td>Hombres</td><td><%= @Hombrestotal %></td>
     </tr>
 
     <tr style="color: #ED5713">
-      <td>Perros</td><td>4</td>
+      <td>Perros</td><td><%= @Perrostotal %></td>
     </tr>
 
     <tr style="color: #057249">
-      <td>Vehiculos</td><td><%= @Vehiculos %></td>
+      <td>Vehiculos</td><td><%= @Vehiculostotal %></td>
     </tr>
 
     <tr style="color: #5F91DC">
-      <td>Agua</td><td><%= @Agua %></td>
+      <td>Bases De Operaciones</td><td><%= @Basesdeoperaciones %></td>
     </tr>
 
     <tr style="color: #F88E5D">
-      <td>equipos</td><td><%= @Dinero %></td>
+      <td>Sub Equipos</td><td><%= @Totalquipos %></td>
     </tr>
   </table>
 
@@ -59,7 +59,7 @@
 </div>
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">Numero Total de Equipo Desplegado</h3>
+    <h3 class="panel-title" style="text-align:center">Costo Total de Equipo Desplegado Este Año</h3>
   </div>
   <div class="panel-body">
   <table class="table table-dark">
@@ -67,28 +67,40 @@
     <tr>
       <th scope="col">Total</th>
       <th scope="col">Gasolina</th>
-      <th scope="col">Comida</th>
+      <th scope="col">Diesel</th>
       <th scope="col">Hombres</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>20</td>
-      <td>3</td>
-      <td>50</td>
+      <td><%= @costogasolina%> bs</td>
+      <td><%= @costodiesel%> bs</td>
+      <td><%= @HombresAnual%></td>
     </tr>
     <tr>
       <th scope="row"></th>
-      <th scope="col">Perros</td>
+      <th scope="col">Equipos Registrado</td>
       <th scope="col">Vehiculos</td>
-      <th scope="col">Agua</td>
+      <th scope="col">Perros</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>4</th>
-      <td>5</td>
-      <td>120</td>
+      <td><%= @Totalquipoanual %></th>
+      <td><%= @Totalvehiculosanul %></td>
+      <td><%= @Totalperrosanual %></td>
+    </tr>
+     <tr>
+      <th scope="row"></th>
+      <th scope="col">Precio avg gasolina</td>
+      <th scope="col">precio avg diesel</td>
+      <th scope="col">Equipos que llevaron agua</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><%= @Gasolinatotalanual %></th>
+      <td><%= @DieselTotalanual %></td>
+      <td><%= @Equiposconagua %></td>
     </tr>
   </tbody>
 </table>

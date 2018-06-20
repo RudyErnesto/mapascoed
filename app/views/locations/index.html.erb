@@ -70,9 +70,26 @@
   <div class="panel-footer"></div>
 </div>
 <div class="panel panel-info">
-<div class="panel-heading"><h4 class="panel-title" style="text-align:center">Total de Emergencias durante el año</h4></div>
+<div class="panel-heading"><h4 class="panel-title" style="text-align:center">Emergencias por cada mes</h4></div>
   <div class="panel-body" >
     <canvas id="bar-chart" width="800" height="250"></canvas>
+  </div>
+  <div class="panel-footer"></div>
+</div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><h4 class="panel-title" style="text-align:center">Desastres de los ultimos 4 anños</h4></h3>
+  </div>
+  <div class="panel-body" >
+    <canvas id="bar-chart1" ></canvas>
+  </div>
+  <div class="panel-footer"></div>
+</div>
+<div class="panel panel-info">
+<div class="panel-heading"><h4 class="panel-title" style="text-align:center">Total historico de Emergencias</h4></div>
+  <div class="panel-body" >
+    <canvas id="bar-chart2" width="800" height="250"></canvas>
   </div>
   <div class="panel-footer"></div>
 </div>
@@ -117,7 +134,29 @@
 </table>
   </div>
 </div>
-
+<script>
+// Bar chart
+new Chart(document.getElementById("bar-chart1"), {
+    type: 'bar',
+    data: {
+      labels: [<%=@anioactual - 3%>,<%=@anioactual -2%>, <%=@anioactual -1%>, <%=@anioactual %>],
+      datasets: [
+        {
+          label: "Emergencias (Cantidad Total)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+          data: [<%=@emergenciaanual1%>, <%=@emergenciaanual2%>, <%=@emergenciaanual3%>, <%=@emergenciaanual4%>]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Emergencias Registradas'
+      }
+    }
+});
+</script>
 
 <script type="text/javascript">
   handler = Gmaps.build('Google');
@@ -131,35 +170,35 @@
 new Chart(document.getElementById("line-chart"), {
   type: 'line',
   data: {
-    labels: ['Enero','Febrero','Marzo','Abril','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+    labels: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
     datasets: [{ 
-        data: [0,0,0,0,0,0,0,0,0,<%= @numeroincendios%>,0,0],
+        data: [<%= @incendiosenero%>,<%= @incendiosfebrero%>,<%= @incendiosmarzo%>,<%= @incendiosabril%>,<%= @incendiosmayo%>,<%= @incendiosjunio%>,<%= @incendiosjulio%>,<%= @incendiosagosto%>,<%= @incendiosseptiembre%>,<%= @incendiosoctubre%>,<%= @incendiosnoviembre%>,<%= @incendiosdiciembre%>],
         label: "Incendios",
         borderColor: "#3e95cd",
         fill: false
       }, { 
-        data: [0,0,0,0,<%= @numeroinundacion%>,0,0,0,0],
+          data: [<%= @inundacionessenero%>,<%= @inundacionesfebrero%>,<%= @inundacionesmarzo%>,<%= @inundacionesabril%>,<%= @inundacionesmayo%>,<%= @inundacionesjunio%>,<%= @inundacionesjulio%>,<%= @inundacionesagosto%>,<%= @inundacionesseptiembre%>,<%= @inundacionesoctubre%>,<%= @inundacionesnoviembre%>,<%= @inundacionesdiciembre%>],
         label: "Inundaciones",
         borderColor: "#8e5ea2",
         fill: false
       }, { 
-        data: [0,0,0,0,0,0,0,0,0,0,0,<%= @numeroderrumbe%>],
+        data: [<%= @derrumbesenero%>,<%= @derrumbesfebrero%>,<%= @derrumbesmarzo%>,<%= @derrumbesabril%>,<%= @derrumbesmayo%>,<%= @derrumbesjunio%>,<%= @derrumbesulio%>,<%= @derrumbesagosto%>,<%= @derrumbesseptiembre%>,<%= @derrumbesoctubre%>,<%= @derrumbesnoviembre%>,<%= @derrumbesdiciembre%>],
         label: "Derrumbes",
         borderColor: "#3cba9f",
         fill: false
       }, { 
-        data: [0,0,0,0,0,0,0,0,0,0,0,0],
-        label: "Deslizamientos",
+         data: [<%= @deslizamientosenero%>,<%= @deslizamientosfebrero%>,<%= @deslizamientosmarzo%>,<%= @deslizamientosabril%>,<%= @deslizamientosmayo%>,<%= @deslizamientosjunio%>,<%= @deslizamientosjulio%>,<%= @deslizamientosagosto%>,<%= @deslizamientosseptiembre%>,<%= @deslizamientosoctubre%>,<%= @deslizamientosnoviembre%>,<%= @deslizamientosdiciembre%>],
+        label: "Granizada",
         borderColor: "#e8c3b9",
         fill: false
       }, { 
-        data: [0,0,0,<%=@numeroterremotos%>,0,0,0,0,0,0,0,0],
+          data: [<%= @terremotosenero%>,<%= @terremotofebrero%>,<%= @terremotomarzo%>,<%= @terremotoabril%>,<%= @terremotomayo%>,<%= @terremotojunio%>,<%= @iterremotojulio%>,<%= @terremotoagosto%>,<%= @terremotoseptiembre%>,<%= @terremotooctubre%>,<%= @terremotonoviembre%>,<%= @terremotodiciembre%>],
         label: "Terremoto",
         borderColor: "#c45850",
         fill: false
       },
       { 
-        data: [0,0,0,0,0,0,0,0,0,0,0,0],
+         data: [<%= @sequiaenero%>,<%= @sequiafebrero%>,<%= @sequiamarzo%>,<%= @sequiaabril%>,<%= @sequiamayo%>,<%= @sequiajunio%>,<%= @sequiajulio%>,<%= @sequiaagosto%>,<%= @sequiaseptiembre%>,<%= @sequiaoctubre%>,<%= @sequianoviembre%>,<%= @sequiadiciembre%>],
         label: "Sequia",
         borderColor: "#c42250",
         fill: false
@@ -180,12 +219,12 @@ new Chart(document.getElementById("line-chart"), {
 new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
-      labels: ["Enero", "Febrero", "Marzo", "Abril", "Junio", "Julio","Agosto", "Septiembre", "Octubre","Noviembre", "Diciembre"],
+      labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio","Agosto", "Septiembre", "Octubre","Noviembre", "Diciembre"],
       datasets: [
         {
           label: "Emergencias (Cantidad Total)",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850", "#8E44AD","#F5B041" ,"#a23185 " ,"#a72550","#E74C3C","#F7DC6F"],
-          data: [0,0,0,<%=@numeroterremotos%>,<%= @numeroterremotos%>,0,0,0,0,<%= @numeroincendios%>,<%= @numeroderrumbe%>]
+          data: [<%=@emergenciasenero%>,<%=@emergenciasfebrero%>,<%=@emergenciasmarzo%>,<%=@emergenciasabril%>,<%= @emergenciasmayo%>,<%= @emergenciasjunio%>,<%= @emergenciasjulio%>,<%= @emergenciasagosto%>,<%= @emergenciasseptiembre%>,<%= @emergenciasoctubre%>,<%= @emergenciasnoviembre%>, <%=@emergenciasdiciembre%>]
         }
       ]
     },
@@ -198,4 +237,30 @@ new Chart(document.getElementById("bar-chart"), {
     }
 });
 </script>
+<script>
+// Bar chart
+new Chart(document.getElementById("bar-chart2"), {
+    type: 'bar',
+    data: {
+      labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio","Agosto", "Septiembre", "Octubre","Noviembre", "Diciembre"],
+      datasets: [
+        {
+          label: "Emergencias (Cantidad Total)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850", "#8E44AD","#F5B041" ,"#a23185 " ,"#a72550","#E74C3C","#F7DC6F"],
+          data: [<%=@totalemergenciasenero%>,<%=@totalemergenciasfebrero%>,<%=@totalemergenciasmarzo%>,<%=@totalemergenciasabril%>,<%= @totalemergenciasmayo%>,<%= @totalemergenciasjunio%>,<%= @totalemergenciasjulio%>,<%= @totalemergenciasagosto%>,<%= @totalemergenciasseptiembre%>,<%= @totalemergenciasoctubre%>,<%= @totalemergenciasnoviembre%>, <%=@totalemergenciasdiciembre%>]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Emergencias Registradas'
+      }
+    }
+});
+</script>
+<!-->
+
+
 

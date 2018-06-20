@@ -10,6 +10,8 @@ class RecursoEventosController < ApplicationController
     else
       @recurso_eventos = RecursoEvento.all
     end
+    @disponibles = RecursoEvento.where(estado: true).count
+    @enuso = RecursoEvento.where(estado: false).count
     respond_to do |format|
       format.html
       format.json
@@ -40,7 +42,6 @@ class RecursoEventosController < ApplicationController
   # POST /recurso_eventos.json
   def create
     @recurso_evento = RecursoEvento.new(recurso_evento_params)
-
     respond_to do |format|
       if @recurso_evento.save
         format.html { redirect_to @recurso_evento, notice: 'Recurso evento was successfully created.' }
