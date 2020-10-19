@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180620151525) do
+ActiveRecord::Schema.define(version: 20200917203307) do
 
   create_table "funcionarios", force: :cascade do |t|
     t.string "nombre"
@@ -18,11 +18,28 @@ ActiveRecord::Schema.define(version: 20180620151525) do
     t.string "celular"
     t.string "telefono"
     t.string "correo"
-    t.string "estado"
+    t.boolean "estado", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "tipo"
     t.string "ci"
+    t.integer "institucions_id"
+    t.integer "institucion_id"
+    t.boolean "materiaspeligrosas", default: false
+    t.boolean "estructurascolapsadas", default: false
+    t.boolean "busquedayrescate", default: false
+    t.boolean "rescateacuatico", default: false
+    t.boolean "manejadordeperros", default: false
+    t.boolean "extinciondeincendiosurbanos", default: false
+    t.boolean "extinciondeincendiosforestales", default: false
+    t.boolean "medico", default: false
+    t.boolean "soportebasicodevida", default: false
+    t.boolean "asistentedeprimerosauxilios", default: false
+    t.boolean "intructorcpi", default: false
+    t.integer "user_id"
+    t.index ["institucion_id"], name: "index_funcionarios_on_institucion_id"
+    t.index ["institucions_id"], name: "index_funcionarios_on_institucions_id"
+    t.index ["user_id"], name: "index_funcionarios_on_user_id"
   end
 
   create_table "hojaderecursos", force: :cascade do |t|
@@ -82,7 +99,7 @@ ActiveRecord::Schema.define(version: 20180620151525) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "institucions",  force: :cascade do |t|
+  create_table "institucions", force: :cascade do |t|
     t.string "nombre"
     t.string "personaencargada"
     t.string "cargo"
@@ -325,16 +342,6 @@ ActiveRecord::Schema.define(version: 20180620151525) do
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
-  create_table "organizacions", force: :cascade do |t|
-    t.string "nombre"
-    t.string "numerocontacto"
-    t.string "telefono"
-    t.string "correo"
-    t.boolean "estado"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "recurso_eventos", force: :cascade do |t|
     t.string "solicitado"
     t.datetime "fechapedido"
@@ -364,7 +371,21 @@ ActiveRecord::Schema.define(version: 20180620151525) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "location_id"
+    t.boolean "ambulancia", default: false
+    t.boolean "transporteliviano", default: false
+    t.boolean "trnsportepesado", default: false
+    t.boolean "patrullas", default: false
+    t.boolean "carrosbomberos", default: false
+    t.boolean "cisternas", default: false
+    t.boolean "maquinariapesada", default: false
+    t.integer "cantidadpersonas"
+    t.string "observaciones"
+    t.boolean "estadoactual", default: false
+    t.integer "institucion_id"
+    t.integer "user_id"
+    t.index ["institucion_id"], name: "index_recursos_on_institucion_id"
     t.index ["location_id"], name: "index_recursos_on_location_id"
+    t.index ["user_id"], name: "index_recursos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -378,10 +399,13 @@ ActiveRecord::Schema.define(version: 20180620151525) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "tipo"
+    t.boolean "tipo", default: false
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

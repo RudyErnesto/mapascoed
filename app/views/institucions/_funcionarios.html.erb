@@ -1,22 +1,9 @@
-<%= form_with(model: funcionario, local: true) do |form| %>
-  <% if funcionario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(funcionario.errors.count, "error") %> prohibited this funcionario from being saved:</h2>
-
-      <ul>
-      <% funcionario.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <div class="card">
+<div class="card">
       <div class="card-body">
-  
-                    <h5 class="card-title mb-4">Informacion de Funcionario</h5>
-                     <form class="forms-sample">
+           <%= form_for @institucion.funcionarios.build do |form| %>
+                <%= form.hidden_field :institucion_id, value: @institucion.id %>
+                    <h5 class="card-title mb-4">Informacion de Funcionarios</h5>
+                    <form class="forms-sample">
                       <div class="field">
                         <%= form.label :nombre %>
                         <%= form.text_field :nombre, id: :funcionario_nombre, class:'form-control p-input' %>
@@ -139,8 +126,3 @@
 </div>
 </div>
 </div>
-
-
-
-
-  

@@ -5,31 +5,31 @@
       <canvas id="chart" width="800" height="500"></canvas>
       <table id="chartData">
     <tr>
-      <th>Funcionarios</th><th>Total (#)</th>
+      <th>Funcionarios con especialidades </th><th>Total (#)</th>
      </tr>
 
     <tr style="color: #0DA068">
-      <td>Rescate</td><td><%= @funcionariosrescate%></td>
+      <td>Materiales Peligrosos</td><td><%= @materiaspeligroso %></td>
     </tr>
 
     <tr style="color: #194E9C">
-      <td>Funcionario oficina</td><td><%= @funcionariosoficina%></td>
+      <td>Estructuras Colapsadas</td><td><%= @estructurascolapsadas %></td>
     </tr>
 
     <tr style="color: #ED9C13">
-      <td>Medico</td><td><%= @funcionariosmedico%></td>
+      <td>Busqueda y Rescate</td><td><%= @busquedayrescate %></td>
     </tr>
 
     <tr style="color: #ED5713">
-      <td>Buzo</td><td><%= @funcionariosbuzo%></td>
+      <td>Rescate Acuatico</td><td><%= @rescateacuatico %></td>
     </tr>
 
     <tr style="color: #057249">
-      <td>Administrador</td><td><%= @funcionariosadministrador%></td>
+      <td>Manejador de Perros</td><td><%= @manejadordeperros %></td>
     </tr>
 
     <tr style="color: #5F91DC">
-      <td>General</td><td><%= @funcionariosgeneral%></td>
+      <td>Extincion de incendios Urbanos</td><td><%= @extinciondeincendiosurbanos %></td>
     </tr>
     
   
@@ -88,6 +88,30 @@
 <div class="panel-footer">    <%= link_to 'Nuevo Funcionario', new_funcionario_path , :class => 'btn btn-success'%></div>
 </div>
 
+
+<script>
+// Bar chart
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["Accesibilidad y transporte", "Busqueda con perros", "Telecomunicaciones", "Evaluacion de daños", "Servicios Publicos", "Manejo de Materiales","Salvamiento Acuatico", "Busqueda y rescate en altura", "Salud y saneamiento","Extincion de incendios urbanos", "Incendios Forestales"],
+      datasets: [
+        {
+          label: "Instituciones (Cantidad Total)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850", "#8E44AD","#F5B041" ,"#a23185 " ,"#a72550","#E74C3C","#F7DC6F"],
+          data: [<%=@actransporte%>,<%=@busquedaperros%>,<%=@telecomunicaciones%>,<%=@evaluaciondaños%>,<%=@serviciospublicos%>,<%=@manejomateriales%>,<%=@salvamientoacuatico%>,<%=@busquedaaltura%>,<%=@salud%>,<%=@incendioshurbanos%>,<%=@incendiosforestales%>]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Instituciones'
+      }
+    }
+});
+</script>
 
 
 

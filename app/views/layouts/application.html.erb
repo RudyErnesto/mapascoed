@@ -28,7 +28,7 @@
       </style>
   <ul class="nav nav-pills">
   <li role="presentation" ><a href="/">Home</a></li>
-  <% if user_signed_in? %>
+  <% if user_signed_in?  && current_user.tipo == true %>
   <li role="presentation"><%= link_to 'Funcionarios   ', funcionarios_path %></li>
   <li><%= link_to 'Recursos', recursos_path %></li>
   <li><%= link_to 'Organizaciones', institucions_path %></li>
@@ -40,8 +40,12 @@
     <% end %>
   <li role="presentation"><%= link_to('Salir', destroy_user_session_path, :method => :delete) %></li>
   <% else %>
-  <li ><%= link_to('Registrarse', new_user_registration_path) %></li>
-  <li role="presentation"><%= link_to('Ingresar', new_user_session_path)  %></li>
+    <% if  user_signed_in? && current_user.tipo == false %>
+      <li role="presentation"><%= link_to('Salir', destroy_user_session_path, :method => :delete) %></li>
+    <% else %>
+    <li ><%= link_to('Registrarse', new_user_registration_path) %></li>
+    <li role="presentation"><%= link_to('Ingresar', new_user_session_path)  %></li>
+    <% end %>
    <% end %>
   </ul>
   </head>

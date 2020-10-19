@@ -8,14 +8,27 @@ class FuncionariosController < ApplicationController
     if @q
       @funcionarios = Funcionario.where("nombre like ?", "%#{@q}%") 
     else
-      @funcionarios = Funcionario.all
+      if current_user.admin?
+        @funcionarios = Funcionario.all.order(created_at: :desc)
+        @materiaspeligroso = Funcionario.all.where(materiaspeligrosas: true).count
+        @estructurascolapsadas = Funcionario.all.where(estructurascolapsadas: true).count
+        @busquedayrescate = Funcionario.all.where(busquedayrescate: true).count
+        @rescateacuatico = Funcionario.all.where(rescateacuatico: true).count
+        @manejadordeperros = Funcionario.all.where(manejadordeperros: true).count
+        @extinciondeincendiosurbanos = Funcionario.all.where(extinciondeincendiosurbanos: true).count
+
+      else
+        @manejadordeperros = current_user.funcionarios.where(manejadordeperros: true).count
+        @funcionarios = current_user.funcionarios.all.order(created_at: :desc)
+        @materiaspeligroso = current_user.funcionarios.where(materiaspeligrosas: true).count
+        @estructurascolapsadas = current_user.funcionarios.where(estructurascolapsadas: true).count
+        @busquedayrescate = current_user.funcionarios.where(busquedayrescate: true).count
+        @rescateacuatico = current_user.funcionarios.where(rescateacuatico: true).count
+        @extinciondeincendiosurbanos = current_user.funcionarios.where(extinciondeincendiosurbanos: true).count
+
+      end
     end
-    @funcionariosrescate = Funcionario.where(tipo: "rescate").count
-    @funcionariosoficina = Funcionario.where(tipo: "oficina").count
-    @funcionariosmedico = Funcionario.where(tipo: "medico").count
-    @funcionariosbuzo = Funcionario.where(tipo: "buzo").count
-    @funcionariosadministrador = Funcionario.where(tipo: "administrador").count
-    @funcionariosgeneral = Funcionario.where(tipo: "general").count
+
   end
 
   # GET /funcionarios/1
@@ -35,11 +48,14 @@ class FuncionariosController < ApplicationController
   # POST /funcionarios
   # POST /funcionarios.json
   def create
-    @funcionario = Funcionario.new(funcionario_params)
+   # @funcionario = Funcionario.new(funcionario_params)
+    institucion = Institucion.find(params[:funcionario][:institucion_id])
+    @funcionario = institucion.funcionarios.build(funcionario_params)
+    @funcionario.user = current_user
 
     respond_to do |format|
       if @funcionario.save
-        format.html { redirect_to @funcionario, notice: 'Funcionario was successfully created.' }
+        format.html { redirect_to @funcionario, notice: 'Funcionario creado exitosamente.' }
         format.json { render :show, status: :created, location: @funcionario }
       else
         format.html { render :new }
@@ -80,6 +96,6 @@ class FuncionariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def funcionario_params
-      params.require(:funcionario).permit(:nombre, :apellido, :celular, :telefono, :correo, :estado, :tipo, :ci)
+      params.require(:funcionario).permit(:nombre, :apellido, :celular, :telefono, :correo, :estado, :tipo, :ci, :id, :materiaspeligrosas, :estructurascolapsadas, :busquedayrescate, :rescateacuatico, :manejadordeperros, :extinciondeincendiosurbanos, :extinciondeincendiosforestales, :medico, :soportebasicodevida, :asistentedeprimerosauxilios, :intructorcpi)
     end
 end

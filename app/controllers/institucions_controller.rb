@@ -9,26 +9,43 @@ class InstitucionsController < ApplicationController
       @institucions = Institucion.where("nombre like ?", "%#{@q}%") 
     else
       if current_user.admin?
-        @institucions = Institucion.all.order(created_at: :desc)
+            @institucions = Institucion.all.order(created_at: :desc)
+            @publica = Institucion.where(institucionpublica: 1).count
+            @privada = Institucion.where(institucionprivada: true).count
+            @sinlucro = Institucion.where(sinfinesdelucro: 1).count
+            @voluntarios = Institucion.where(grupovoluntario: true).count
+            @actransporte = Institucion.where(serviciotransporte: true).count
+            @busquedaperros = Institucion.where(serviciobusquedaperros: true).count
+            @telecomunicaciones  = Institucion.where(serviciotelecomunicaciones: true).count
+            @evaluaciondaños =  Institucion.where(servicioevaluacion: true).count
+            @serviciospublicos  = Institucion.where(serviciosaludysaneamiento: true).count
+            @manejomateriales  = Institucion.where(serviciomanejomateriales: true).count
+            @salvamientoacuatico  = Institucion.where(salvamientoacuatico: true).count
+            @busquedaaltura = Institucion.where(serviciobusquedayrescateenaltura: true).count
+            @salud = Institucion.where(serviciosaludysaneamiento: true).count
+            @incendioshurbanos = Institucion.where(serviciosincendiosurbanos: true).count
+            @incendiosforestales = Institucion.where(servicioincendioforestal: true).count
       else
-        @institucions = Institucion.where user_id: current_user.id
+            @institucions = Institucion.where user_id: current_user.id
+            @publica = current_user.institucions.where(institucionpublica: 1).count
+            @privada = current_user.institucions.where(institucionprivada: true).count
+            @sinlucro = current_user.institucions.where(sinfinesdelucro: 1).count
+            @voluntarios = current_user.institucions.where(grupovoluntario: true).count
+            @actransporte = current_user.institucions.where(serviciotransporte: true).count
+            @busquedaperros = current_user.institucions.where(serviciobusquedaperros: true).count
+            @telecomunicaciones  = current_user.institucions.where(serviciotelecomunicaciones: true).count
+            @evaluaciondaños =  current_user.institucions.where(servicioevaluacion: true).count
+            @serviciospublicos  = current_user.institucions.where(serviciosaludysaneamiento: true).count
+            @manejomateriales  = current_user.institucions.where(serviciomanejomateriales: true).count
+            @salvamientoacuatico  = current_user.institucions.where(salvamientoacuatico: true).count
+            @busquedaaltura = current_user.institucions.where(serviciobusquedayrescateenaltura: true).count
+            @salud = current_user.institucions.where(serviciosaludysaneamiento: true).count
+            @incendioshurbanos = current_user.institucions.where(serviciosincendiosurbanos: true).count
+            @incendiosforestales = current_user.institucions.where(servicioincendioforestal: true).count
       end
     end
-    @publica = Institucion.where(institucionpublica: 1).count
-    @privada = Institucion.where(institucionprivada: true).count
-    @sinlucro = Institucion.where(sinfinesdelucro: 1).count
-    @voluntarios = Institucion.where(grupovoluntario: true).count
-    @actransporte = Institucion.where(serviciotransporte: true).count
-    @busquedaperros = Institucion.where(serviciobusquedaperros: true).count
-    @telecomunicaciones  = Institucion.where(serviciotelecomunicaciones: true).count
-    @evaluaciondaños =  Institucion.where(servicioevaluacion: true).count
-    @serviciospublicos  = Institucion.where(serviciosaludysaneamiento: true).count
-    @manejomateriales  = Institucion.where(serviciomanejomateriales: true).count
-    @salvamientoacuatico  = Institucion.where(salvamientoacuatico: true).count
-    @busquedaaltura = Institucion.where(serviciobusquedayrescateenaltura: true).count
-    @salud = Institucion.where(serviciosaludysaneamiento: true).count
-    @incendioshurbanos = Institucion.where(serviciosincendiosurbanos: true).count
-    @incendiosforestales = Institucion.where(servicioincendioforestal: true).count
+
+  
 
     respond_to do |format|
       format.html

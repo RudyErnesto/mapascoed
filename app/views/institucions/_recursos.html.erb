@@ -1,0 +1,103 @@
+
+
+   <div class="card">
+      <div class="card-body">
+           <%= form_for @institucion.recursos.build do |form| %>
+                <%= form.hidden_field :institucion_id, value: @institucion.id %>
+                    <h5 class="card-title mb-4">Nuevo Vehiculo</h5>
+                    <table class="table">
+                     <thead>
+                         <th scope="col">Tipo de Vehiculo</th>
+                     </thead>
+                    <tbody>
+                    <tr>
+                    <form class="forms-sample">
+                     <td><div class="field">
+                         <%= form.label :Ambulancia %>
+                         <%= form.check_box :ambulancia, id: :ambulancia , class:'form-control p-input'%>
+                        </div>
+                    </td>
+                    <td><div class="field">
+                         <%= form.label :Transporte_Liviano %>
+                         <%= form.check_box :transporteliviano, id: :transporteliviano , class:'form-control p-input'%>
+                        </div>
+                    </td>
+                     <td><div class="field">
+                         <%= form.label :Transporte_Pesado %>
+                         <%= form.check_box :trnsportepesado, id: :trnsportepesado , class:'form-control p-input'%>
+                        </div>
+                    </td>
+                      <td><div class="field">
+                         <%= form.label :Transporte_Pesado %>
+                         <%= form.check_box :trnsportepesado, id: :trnsportepesado , class:'form-control p-input'%>
+                        </div>
+                    </td>
+                      </tr>
+                      <tr>
+                    <td><div class="field">
+                         <%= form.label :Patrullas %>
+                         <%= form.check_box :patrullas, id: :patrullas , class:'form-control p-input'%>
+                        </div>
+                    </td>
+                    <td><div class="field">
+                         <%= form.label :Carro_Bombero %>
+                         <%= form.check_box :carrosbomberos, id: :carrosbomberos , class:'form-control p-input'%>
+                        </div>
+                    </td>
+                      <td><div class="field">
+                         <%= form.label :Cisterna %>
+                         <%= form.check_box :cisternas, id: :cisternas , class:'form-control p-input'%>
+                        </div>
+                    </td>
+                      <td><div class="field">
+                         <%= form.label :Maquinaria_Pesada %>
+                         <%= form.check_box :maquinariapesada, id: :maquinariapesada , class:'form-control p-input'%>
+                        </div>
+                    </td>
+                    </tr>   
+                    </tbody>
+                    </table>
+
+
+                      <div class="field">
+                        <%= form.label :Nombre %>
+                        <%= form.text_field :nombre, id: :recurso_nombre, class:"form-control"%>
+                      </div>
+                    
+                      <div class="field">
+                        <%= form.label :clase %>
+                        <%= form.text_field :clase, id: :recurso_clase, class:"form-control" %>
+                      </div>
+                    
+                      <div class="field">
+                        <%= form.label :Estado_Actual_vacio_inactivo_marcado_habil %>
+                        <%= form.check_box :estadoactual, id: :estadoactual, class:"form-control" %>
+                        
+                      </div>
+                      <div class="field">
+                        <%= form.label :Observaciones %>
+                        <%= form.text_field :observaciones, id: :observaciones, class:"form-control" %>
+                        
+                      </div>
+                    
+                      <div class="field">
+                        <%= form.label :matricula %>
+                        <%= form.text_field :matricula, id: :recurso_matricula, class:"form-control" %>
+                      </div>
+                  
+                        </div>
+                        <div style='width: 800px;'>
+                          <div id="map" style='width: 800px; height: 0px;'></div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Guardar Recurso</button>
+                        </div>
+                    </form>
+</body>
+</div>
+</div>
+
+
+
+<% end %>
+

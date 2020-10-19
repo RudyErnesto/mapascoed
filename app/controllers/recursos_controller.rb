@@ -4,11 +4,21 @@ class RecursosController < ApplicationController
   # GET /recursos
   # GET /recursos.json
   def index
+    
+     @q = params[:q]
+    if @q
+      @recursos = Recurso.where("nombre like ?", "%#{@q}%") 
+    else
+      if current_user.admin?
+        @recursos = Recurso.all.order(created_at: :desc)
+      else
+        @recursos = current_user.recursos.all.order(created_at: :desc)
+      end
+    end
     @reparacion = Recurso.where(estado: "reparacion").count
     @disponible = Recurso.where(estado: "disponible").count
     @nodisponible = Recurso.where(estado: "nodisponible").count
     @asignado = Recurso.where(estado: "asignado").count
-    @recursos = Recurso.all
     respond_to do |format|
       format.html
       format.json
@@ -33,7 +43,10 @@ class RecursosController < ApplicationController
   # POST /recursos
   # POST /recursos.json
   def create
-    @recurso = Recurso.new(recurso_params)
+    #@recurso = Recurso.new(recurso_params)
+    institucion = Institucion.find(params[:recurso][:institucion_id])
+    @recurso = institucion.recursos.build(recurso_params)
+    @recurso.user = current_user
 
     respond_to do |format|
       if @recurso.save
@@ -78,6 +91,6 @@ class RecursosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recurso_params
-      params.require(:recurso).permit(:nombre, :clase, :tipo, :matricula, :estado)
+      params.require(:recurso).permit(:nombre, :clase, :tipo, :matricula, :estado, :ambulancia, :transliviano, :trnsportepesado, :patrullas, :carrosbomberos, :cisternas, :maquinariapesada, :cantidadpersonas, :observaciones, :estadoactual)
     end
 end

@@ -39,6 +39,11 @@
                           <%= form.label :Estado %>
                           <%= form.select(:estado,options_for_select([['disponible', "disponible"], ['No disponible',"nodisponible"], ['Reparacion',"reparacion"], ['asignado',"asignado"]], 4), class: "form-control p-input" )%>
                         </div>
+                         <td><div class="field">
+                         <%= form.label :Ambulancia %>
+                         <%= form.check_box :ambulancia, id: :ambulancia , class:'form-control p-input'%>
+                        </div>
+                    </td>
             
     
                         </div>

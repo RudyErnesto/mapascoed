@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get "welcome/eliminar" => "welcome#eliminar"
-  get "welcome/habilitarlo" => "welcome#habilitarlo"
-  get "welcome/desactivarlo" => "welcome#desactivarlo"
   resources :institucions
   resources :hojaderecursos
   devise_for :users
@@ -11,6 +8,9 @@ Rails.application.routes.draw do
   resources :funcionarios
   resources :recurso_eventos
   resources :locations
+  get "welcomes/index/eliminar" => "welcomes#eliminar"
+  get "welcomes/index/habilitarlo" => "welcomes#habilitarlo"
+  get "welcomes/index/desactivarlo" => "welcomes#desactivarlo"
   root "welcomes#new"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

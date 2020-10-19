@@ -1,7 +1,5 @@
 class WelcomesController < ApplicationController
-  before_action :set_welcome, only: [:show, :edit, :update, :destroy,:eliminar, :habilitarlo, :desactivarlo ]
-  # GET /welcomes
-  # GET /welcomes.json
+  #before_action :authenticate_user!, except: [:index]
   def index
     @palabra = ''
     @palabra = params[:palabra]
@@ -10,26 +8,27 @@ class WelcomesController < ApplicationController
 
 
 def eliminar
-  user=User.find(params[:id])
-  user.destroy
-  @usuarios = User.all
-  render '/'
+    user=User.find(params[:id])
+    user.destroy
+    @usuarios = User.all
+    render 'welcomes/index'
+
 end
 
 def habilitarlo
-  usuario = User.find(params[:id])
-  usuario.tipo = true
-  usuario.save
-  @usuarios = User.where("email LIKE '#{@palabra}%'") 
-  render '/'
+    usuario = User.find(params[:id])
+    usuario.tipo = true
+    usuario.save
+    @usuarios = User.where("email LIKE '#{@palabra}%'") 
+    render "welcomes/index"
 end
 
 def desactivarlo
-  usuario = User.find(params[:id])
-  usuario.tipo = nil
-  usuario.save
-  @usuarios = User.where("email LIKE '#{@palabra}%'") 
-  render '/'
+    usuario = User.find(params[:id])
+    usuario.tipo = false
+    usuario.save
+    @usuarios = User.where("email LIKE '#{@palabra}%'") 
+    render "welcomes/index"
 end
 
   # GET /welcomes/1
@@ -89,11 +88,11 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_welcome
-      @welcome = Welcome.find(params[:id])
+    
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def welcome_params
-      params.fetch(:welcome, {})
+   
     end
 end

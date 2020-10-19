@@ -1,5 +1,7 @@
 {
   "name": "mapascoed",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jshint": "^2.12.0"
+  }
 }

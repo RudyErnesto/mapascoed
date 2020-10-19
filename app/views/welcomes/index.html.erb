@@ -16,8 +16,8 @@
   <thead>
     <tr>
       <th scope="col">Correo</th>
-      <th scope="col">Activar</th>
-      <th scope="col">Desactivar</th>
+      
+      <th scope="col">Estado</th>
       <th scope="col">Eliminar</th>
     </tr>
   </thead>
@@ -25,17 +25,19 @@
      <% @usuarios.each do |usuario| %>
       <tr>
         <td class = "info"><%= usuario.email%></td>
+          <% if usuario.tipo == false %>
             <td class = "success">
-              <%= link_to 'Habilitarlo', :controller => :welcome ,:action => :habilitarlo, :id => usuario.id , :class=>"btn btn-primary"%>
+              <%= link_to 'Habilitarlo', :controller => :welcomes ,:action => :habilitarlo, :id => usuario.id , :class=>"btn btn-primary"%>
             </td>
-     
+          <% else %>
             <td class = "success">
-              <%= link_to 'Descativarlo', :controller => :welcome ,:action => :desactivarlo, :id => usuario.id %>
+              <%= link_to 'Descativarlo', :controller => :welcomes ,:action => :desactivarlo, :id => usuario.id %>
             </td>
-       <td><%= link_to 'Eliminar',:controller => :welcome, :action => :eliminar, :id => usuario.id %></td>
+          <% end %>
+       <td><%= link_to 'Eliminar',:controller => :welcomes, :action => :eliminar, :id => usuario.id %></td>
        </tr>
     <% end %>
-    
+     
   </tbody>
 </table>
 </div>

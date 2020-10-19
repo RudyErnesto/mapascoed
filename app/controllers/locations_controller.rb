@@ -70,18 +70,18 @@ class LocationsController < ApplicationController
     @deslizamientosoctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "granizada").count
     @deslizamientosnoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "granizada").count
     @deslizamientosdiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "granizada").count
-    @terremotosenero = Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "terremoto").count
-    @terremotofebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "terremoto").count
-    @terremotomarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "terremoto").count
-    @terremotoabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "terremoto").count
-    @terremotomayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "terremoto").count
-    @terremotojunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "terremoto").count
-    @iterremotojulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "terremoto").count
-    @terremotoagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "terremoto").count
-    @terremotoseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "terremoto").count
-    @terremotooctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "terremoto").count
-    @terremotonoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "terremoto").count
-    @terremotodiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "terremoto").count
+    @terremotosenero = Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "terremeto").count
+    @terremotofebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "terremeto").count
+    @terremotomarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "terremeto").count
+    @terremotoabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "terremeto").count
+    @terremotomayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "terremeto").count
+    @terremotojunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "terremeto").count
+    @iterremotojulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "terremeto").count
+    @terremotoagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "terremeto").count
+    @terremotoseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "terremeto").count
+    @terremotooctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "terremeto").count
+    @terremotonoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "terremeto").count
+    @terremotodiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "terremeto").count
     @sequiaenero =  Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "sequia").count
     @sequiafebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "sequia").count
     @sequiamarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "sequia").count
@@ -170,7 +170,6 @@ class LocationsController < ApplicationController
   def create
     @location = current_user.locations.new(location_params)
     #@location = Location.new(location_params)
-
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }

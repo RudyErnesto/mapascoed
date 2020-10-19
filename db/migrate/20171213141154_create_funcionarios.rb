@@ -6,7 +6,7 @@ class CreateFuncionarios < ActiveRecord::Migration[5.1]
       t.string :celular
       t.string :telefono
       t.string :correo
-      t.string :estado
+      t.boolean :estado,  default: false
 
       t.timestamps
     end

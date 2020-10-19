@@ -57,14 +57,7 @@
 <%= link_to 'Atras', locations_path , :class => 'btn btn-info'%> |
 <%= link_to 'Nuevo Recurso Usado', new_recurso_evento_path, class: "btn btn-warning"%>
 
-<div>   
-      <h3>recursos <h3>
-      <%@location.recurso_eventos.each do |recurso| %>
-      <div>
-        <%= recurso.asignadoa %>
-      </div>
-      <% end %>
-</div>
+
 
 </body>
 
