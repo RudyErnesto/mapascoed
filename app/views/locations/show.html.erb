@@ -55,7 +55,8 @@
 </form>
 <%= link_to 'Editar', edit_location_path(@location), :class => 'btn btn-success' %> |
 <%= link_to 'Atras', locations_path , :class => 'btn btn-info'%> |
-<%= link_to 'Nuevo Recurso Usado', new_recurso_evento_path, class: "btn btn-warning"%>
+<%= render "datosgenerales" %>
+<%= render "hojaderecursos" %>
 
 
 

@@ -42,6 +42,9 @@ class RecursoEventosController < ApplicationController
   # POST /recurso_eventos.json
   def create
     @recurso_evento = RecursoEvento.new(recurso_evento_params)
+    location = Location.find(params[:recurso_evento][:location_id])
+    @recurso_evento = location.recursoeventos.build(funcionario_params)
+    @recurso_evento.user = current_user
     respond_to do |format|
       if @recurso_evento.save
         format.html { redirect_to @recurso_evento, notice: 'Recurso evento was successfully created.' }

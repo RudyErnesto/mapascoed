@@ -1,0 +1,51 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title" style="text-align:center">Costo Total de la emergencia  </h3>
+  </div>
+  <div class="panel-body">
+  <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Total</th>
+      <th scope="col">Gasolina</th>
+      <th scope="col">Diesel</th>
+      <th scope="col">Hombres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= @costogasolina%> bs</td>
+      <td><%= @location.hojaderecursos.sum(:numeropersonas)%> bs</td>
+      <td><%= @location.hojaderecursos.sum(:numeropersonas) %></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <th scope="col">Equipos Registrado</td>
+      <th scope="col">Vehiculos</td>
+      <th scope="col">Perros</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><%= @location.hojaderecursos.sum(:equiposdespleagados) %></th>
+      <td><%= @location.hojaderecursos.sum(:vehiculosdesplegados) %></td>
+      <td><%=  %></td>
+    </tr>
+     <tr>
+      <th scope="row"></th>
+      <th scope="col">Precio avg gasolina</td>
+      <th scope="col">precio avg diesel</td>
+      <th scope="col">Equipos que llevaron agua</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><%= @Gasolinatotalanual %></th>
+      <td><%= @DieselTotalanual %></td>
+      <td><%= @Equiposconagua %></td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="panel-footer">Datos Generales de los grupos</div>
+</div>

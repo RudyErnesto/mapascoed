@@ -1,0 +1,201 @@
+<div class="card">
+      <div class="card-body">
+           <%= form_for @location.hojaderecursos.build do |form| %>
+                <%= form.hidden_field :location_id, value: @location.id %>
+                    <h3 class="text-primary mb-4">Hoja de Recursos</h3>
+                    <h4 class="card-title mb-4">Nueva Hoja de Recursos</h4>
+                    <form class="forms-sample" >
+                    <div class="container">
+  <div class="accordion-option">
+    <h3 class="title"></h3>
+    <a href="javascript:void(0)" class="toggle-accordion active" accordion-id="#accordion"></a>
+  </div>
+  <div class="clearfix"></div>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+           <h5>Informacion</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapseOne" class="collapse" role="tabpanel">
+        <div class="panel-body">
+          <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Equipos desplegados</th>
+      <th scope="col">Personas desplegados</th>
+      <th scope="col">Vehiculos desplegados</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Total</th>
+      <td><div class="field">
+
+    <%= form.number_field :equiposdespleagados, id: :hojaderecurso_equiposdespleagados, class:'form-control p-input'%>
+  </div></td>
+      <td>  <div class="field">
+
+    <%= form.number_field :personasdesplegados, id: :hojaderecurso_personasdesplegados, class:'form-control p-input' %>
+  </div></td>
+      <td><div class="field">
+
+    <%= form.number_field :vehiculosdesplegados, id: :hojaderecurso_vehiculosdesplegados, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+   
+  </tbody>
+</table>
+
+    <div class="field">
+    <%= form.label :Identificador_del_Equipo %>
+    <%= form.text_field :identificadorequipo, id: :hojaderecurso_identificadorequipo, class:'form-control p-input' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Nombre_del_Equipo %>
+    <%= form.text_field :nombrequipo, id: :hojaderecurso_nombrequipo, class:'form-control p-input' %>
+  </div>
+  <tr>
+   <td>
+      <div class="field">
+    <%= form.label :Numero_de_personas %>
+    <%= form.number_field :numeropersonas, id: :hojaderecurso_numeropersonas, class:'form-control p-input' %>
+  </div>
+  </td>
+</tr>
+<tr>
+  <td>
+    
+  <div class="field">
+    <%= form.label :Numero_de_perros %>
+    <%= form.number_field :numeroperros, id: :hojaderecurso_numeroperros, class:'form-control p-input' %>
+  </div>
+  </td>
+
+</tr>
+  
+</tr>
+
+   <div class="field">
+      <%= form.label :Numero_de_Vehiculos %>
+    <%= form.number_field :transportepersonas, id: :hojaderecurso_transportepersonas, class:'form-control p-input' %>
+  </div></td>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          <h5>Base de Operaciones</h5>
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="collapse " role="tabpanel" >
+        <div class="panel-body">
+         <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Base de Operaciones</th>
+      <th scope="col">Especifique</th>
+      <th scope="col">Cpacidad de Monitoreo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th> <div class="field">
+
+    <%= form.check_box :baseoperaciones, id: :hojaderecurso_baseoperaciones, class:'form-control p-input' %>
+  </div></th>
+      <td><div class="field">
+
+    <%= form.text_field :baseoperacionesespecifique, id: :hojaderecurso_baseoperacionesespecifique, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+
+    <%= form.check_box :capacidadmonitoreo, id: :hojaderecurso_capacidadmonitoreo, class:'form-control p-input' %>
+  </div></td>
+
+    </tr>
+  </tbody>
+</table> 
+  <h5>Requerimiento de Apoyo</h5>
+  <table class="table table-dark">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <td> <div class="field">
+    <%= form.label :Equipamiento %>
+    <%= form.text_area :equipamiento, id: :hojaderecurso_equipamiento, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :Equipamiento_Especial %>
+    <%= form.text_area :equipamientoespecial, id: :hojaderecurso_equipamientoespecial, class:'form-control p-input' %>
+  </div></td>
+     
+    </tr>
+    <tr>
+      
+      <td>  <div class="field">
+    <%= form.label :Gasolina %>
+    <%= form.text_field :gasolina, id: :hojaderecurso_gasolina, class:'form-control p-input' %>
+  </div></td>
+      <td> <div class="field">
+    <%= form.label :Precio_Gasolina %>
+    <%= form.text_field :preciogasolina, id: :hojaderecurso_preciogasolina, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+
+    <tr>
+    <td><div class="field">
+    <%= form.label :Diesel %>
+    <%= form.text_field :diesel, id: :hojaderecurso_diesel, class:'form-control p-input' %>
+  </div></td>
+     <td> <div class="field">
+    <%= form.label :Precio_diesel %>
+    <%= form.text_field :preciodiesel, id: :hojaderecurso_preciodiesel, class:'form-control p-input' %>
+   
+  </div></td>
+    </tr>
+
+
+    <tr>
+    <td> <div class="field">
+    <%= form.label :Comida %>
+    <%= form.check_box :comida, id: :hojaderecurso_comida, class:'form-control p-input' %>
+  </div></td>
+     <td> <div class="field">
+    <%= form.label :Agua %>
+    <%= form.check_box :agua, id: :hojaderecurso_agua, class:'form-control p-input' %>
+  </div></td>
+  <td> <div class="field">
+    <%= form.label :Requerimeinto_espacio_en_CCO %>
+    <%= form.text_area :requerimientoespacioenCCO, id: :hojaderecurso_requerimientoespacioenCCO, class:'form-control p-input' %>
+  </div></td>
+    </tr>
+  
+  </tbody>
+</table>
+
+  <div class="field">
+    <%= form.label :Otros_requemientos_Logistico %>
+    <%= form.text_area :otrorequerimientologistico, id: :hojaderecurso_otrorequerimientologistico, class:'form-control p-input' %>
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+                            <button type="submit" class="btn btn-primary">Guardar Hoja de Recursos</button>
+                        </div>
+</div>
+ </form>
+ <% end %>    

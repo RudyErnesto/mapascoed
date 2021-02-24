@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
   has_many :locations
+  has_many :hojaderecursos
   has_many :institucions
   has_many :funcionarios
   has_many :recursos

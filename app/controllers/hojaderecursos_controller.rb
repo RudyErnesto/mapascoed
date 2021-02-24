@@ -17,8 +17,8 @@ class HojaderecursosController < ApplicationController
     @preciogasolina =Hojaderecurso.average(:preciogasolina)
     @preciodiesel = Hojaderecurso.average(:preciodiesel)
     @Totalquipos =Hojaderecurso.sum(:equiposdespleagados)
-    @costogasolina =  @Gasolinatotalanual * @preciogasolina
-    @costodiesel =  @DieselTotalanual * @preciodiesel
+   # @costogasolina =  @Gasolinatotalanual * @preciogasolina
+    #@costodiesel =  @DieselTotalanual * @preciodiesel
     @Equiposconagua = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).where(agua: true).count
     @HombresAnual = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).sum(:personasdesplegados)
     @Totalquipoanual = Hojaderecurso.where("cast(strftime('%Y', created_at) as int) = ?", Time.now.year).count
@@ -50,6 +50,7 @@ class HojaderecursosController < ApplicationController
   # GET /hojaderecursos/new
   def new
     @hojaderecurso = Hojaderecurso.new
+    @categories = Institucion.all
   end
 
   # GET /hojaderecursos/1/edit
@@ -59,7 +60,11 @@ class HojaderecursosController < ApplicationController
   # POST /hojaderecursos
   # POST /hojaderecursos.json
   def create
-    @hojaderecurso = Hojaderecurso.new(hojaderecurso_params)
+    location = Location.find(params[:hojaderecurso][:location_id])
+    @hojaderecurso = location.hojaderecursos.build(hojaderecurso_params)
+    @hojaderecurso.user = current_user
+    @hojaderecurso.categories = params[:categories]
+    #@hojaderecurso = Hojaderecurso.new(hojaderecurso_params)
 
     respond_to do |format|
       if @hojaderecurso.save
@@ -104,6 +109,6 @@ class HojaderecursosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hojaderecurso_params
-      params.require(:hojaderecurso).permit(:equiposdespleagados, :personasdesplegados, :vehiculosdesplegados, :identificadorequipo, :nombrequipo, :numeropersonas, :numeroperros, :categoriarecursos, :busquedatecnica, :recatevehicula, :rescatevertical, :atencionPrehospitalaria, :rescateestrucurascolapsadas, :incendioestructura, :apoyoCCOPC, :apoyologistico, :especofiquelogistico, :otrascapacidades, :vehiculo, :tipovehiculo, :comida, :tiempocomida, :fechavigenciaformulario, :tiemporespesta, :baseoperaciones, :baseoperacionesespecifique, :capacidadmonitoreo, :transportepersonas, :transporteperrros, :equipamiento, :equipamientoespecial, :gasolina, :preciogasolina, :diesel, :preciodiesel, :comida, :agua, :requerimientoespacioenCCO, :otrorequerimientologistico, :contacto1nombre, :contacto1telefono, :contacto1correo, :contacto2nombre, :contacto2celular, :contacto2correo, :direccionbasedeoperaciones, :basedeoperacionestelefono, :frecuenciaradiobase, :cordenadasbasedecimal, :cordenadasbaseotroformato, :formulariocompletadofecha, :nombre, :gradoycargo)
+      params.require(:hojaderecurso).permit(:equiposdespleagados, :personasdesplegados, :vehiculosdesplegados, :identificadorequipo, :nombrequipo, :numeropersonas, :numeroperros, :categoriarecursos, :busquedatecnica, :recatevehicula, :rescatevertical, :atencionPrehospitalaria, :rescateestrucurascolapsadas, :incendioestructura, :apoyoCCOPC, :apoyologistico, :especofiquelogistico, :otrascapacidades, :vehiculo, :tipovehiculo, :comida, :tiempocomida, :fechavigenciaformulario, :tiemporespesta, :baseoperaciones, :baseoperacionesespecifique, :capacidadmonitoreo, :transportepersonas, :transporteperrros, :equipamiento, :equipamientoespecial, :gasolina, :preciogasolina, :diesel, :preciodiesel, :comida, :agua, :requerimientoespacioenCCO, :otrorequerimientologistico, :contacto1nombre, :contacto1telefono, :contacto1correo, :contacto2nombre, :contacto2celular, :contacto2correo, :direccionbasedeoperaciones, :basedeoperacionestelefono, :frecuenciaradiobase, :cordenadasbasedecimal, :cordenadasbaseotroformato, :formulariocompletadofecha, :categories)
     end
 end

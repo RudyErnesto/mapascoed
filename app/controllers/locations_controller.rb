@@ -1,4 +1,4 @@
-class LocationsController < ApplicationController
+ class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   # GET /locations
@@ -15,60 +15,60 @@ class LocationsController < ApplicationController
       end
      # @locations = Location.where user_id: current_user.id
     end
-    @numeroincendios = Location.where(tipo: "incendio").count
-    @numeroinundacion = Location.where(tipo: "inundacion").count
-    @numerogranizada = Location.where(tipo: "granizada").count
-    @numerosequias = Location.where(tipo: "sequia").count
-    @numeroterremotos = Location.where(tipo: "terremeto").count
-    @numeroderrumbe = Location.where(tipo: "derrumbe").count
-    @numerodeslizamientos = Location.where(tipo: "deslizamientos").count
-    @incendiosenero =  Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "incendio").count
-    @incendiosfebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "incendio").count
-    @incendiosmarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "incendio").count
-    @incendiosabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "incendio").count
-    @incendiosmayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "incendio").count
-    @incendiosjunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "incendio").count
-    @incendiosjulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "incendio").count
-    @incendiosagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "incendio").count
-    @incendiosseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "incendio").count
-    @incendiosoctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "incendio").count
-    @incendiosnoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "incendio").count
-    @incendiosdiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "incendio").count
-    @inundacionessenero = Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "inundacion").count
-    @inundacionesfebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "inundacion").count
-    @inundacionesmarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "inundacion").count
-    @inundacionesabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "inundacion").count
-    @inundacionesmayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "inundacion").count
-    @inundacionesjunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "inundacion").count
-    @inundacionesjulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "inundacion").count
-    @inundacionesagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "inundacion").count
-    @inundacionesseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "inundacion").count
-    @inundacionesoctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "inundacion").count
-    @inundacionesnoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "inundacion").count
-    @inundacionesdiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "inundacion").count
-    @derrumbesenero = Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "derrumbe").count
-    @derrumbesfebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "derrumbe").count
-    @derrumbesmarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "derrumbe").count
-    @derrumbesabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "derrumbe").count
-    @derrumbesmayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "derrumbe").count
-    @derrumbesjunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "derrumbe").count
-    @derrumbesulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "derrumbe").count
-    @derrumbesagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "derrumbe").count
-    @derrumbesseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "derrumbe").count
-    @derrumbesoctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "derrumbe").count
-    @derrumbesnoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "derrumbe").count
-    @derrumbesdiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "derrumbe").count
-    @deslizamientosenero = Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "granizada").count
-    @deslizamientosfebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "granizada").count
-    @deslizamientosmarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "granizada").count
-    @deslizamientosabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "granizada").count
-    @deslizamientosmayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "granizada").count
-    @deslizamientosjunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "granizada").count
-    @deslizamientosjulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "granizada").count
-    @deslizamientosagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "granizada").count
-    @deslizamientosseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "granizada").count
-    @deslizamientosoctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "granizada").count
-    @deslizamientosnoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "granizada").count
+   # @numeroincendios = Location.where(tipo: "incendio").count
+   # @numeroinundacion = Location.where(tipo: "inundacion").count
+   # @numerogranizada = Location.where(tipo: "granizada").count
+   # @numerosequias = Location.where(tipo: "sequia").count
+   # @numeroterremotos = Location.where(tipo: "terremeto").count
+   # @numeroderrumbe = Location.where(tipo: "derrumbe").count
+   # @numerodeslizamientos = Location.where(tipo: "deslizamientos").count
+    #@incendiosenero =  Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "incendio").count
+    #@incendiosfebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "incendio").count
+    #@incendiosmarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "incendio").count
+    #@incendiosabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "incendio").count
+    #@incendiosmayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "incendio").count
+    #@incendiosjunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "incendio").count
+    #@incendiosjulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "incendio").count
+    #@incendiosagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "incendio").count
+    #@incendiosseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "incendio").count
+    #@incendiosoctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "incendio").count
+    #@incendiosnoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "incendio").count
+    #@incendiosdiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "incendio").count
+    #@inundacionessenero = Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "inundacion").count
+    #@inundacionesfebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "inundacion").count
+    #@inundacionesmarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "inundacion").count
+    #@inundacionesabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "inundacion").count
+    #@inundacionesmayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "inundacion").count
+    #@inundacionesjunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "inundacion").count
+    #@inundacionesjulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "inundacion").count
+    #@inundacionesagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "inundacion").count
+   # @inundacionesseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "inundacion").count
+   # @inundacionesoctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "inundacion").count
+   # @inundacionesnoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "inundacion").count
+   # @inundacionesdiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "inundacion").count
+   # @derrumbesenero = Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "derrumbe").count
+   # @derrumbesfebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "derrumbe").count
+    #@derrumbesmarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "derrumbe").count
+    #@derrumbesabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "derrumbe").count
+    #@derrumbesmayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "derrumbe").count
+    #@derrumbesjunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "derrumbe").count
+    #@derrumbesulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "derrumbe").count
+    #@derrumbesagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "derrumbe").count
+    #@derrumbesseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "derrumbe").count
+    #@derrumbesoctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "derrumbe").count
+    #@derrumbesnoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "derrumbe").count
+    #@derrumbesdiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "derrumbe").count
+    #@deslizamientosenero = Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "granizada").count
+    #@deslizamientosfebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "granizada").count
+    #@deslizamientosmarzo = Location.where("cast(strftime('%m', created_at) as int) = ?", 3).where(tipo: "granizada").count
+    #@deslizamientosabril = Location.where("cast(strftime('%m', created_at) as int) = ?", 4).where(tipo: "granizada").count
+    #@deslizamientosmayo = Location.where("cast(strftime('%m', created_at) as int) = ?", 5).where(tipo: "granizada").count
+    #@deslizamientosjunio = Location.where("cast(strftime('%m', created_at) as int) = ?", 6).where(tipo: "granizada").count
+    #@deslizamientosjulio = Location.where("cast(strftime('%m', created_at) as int) = ?", 7).where(tipo: "granizada").count
+    #@deslizamientosagosto = Location.where("cast(strftime('%m', created_at) as int) = ?", 8).where(tipo: "granizada").count
+    #@deslizamientosseptiembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 9).where(tipo: "granizada").count
+    #@deslizamientosoctubre = Location.where("cast(strftime('%m', created_at) as int) = ?", 10).where(tipo: "granizada").count
+    #deslizamientosnoviembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 11).where(tipo: "granizada").count
     @deslizamientosdiciembre = Location.where("cast(strftime('%m', created_at) as int) = ?", 12).where(tipo: "granizada").count
     @terremotosenero = Location.where("cast(strftime('%m', created_at) as int) = ?", 1).where(tipo: "terremeto").count
     @terremotofebrero = Location.where("cast(strftime('%m', created_at) as int) = ?", 2).where(tipo: "terremeto").count
@@ -126,9 +126,6 @@ class LocationsController < ApplicationController
 
 
 
-
-
-
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
     marker.lat location.latitude
     marker.lng location.longitude
@@ -145,6 +142,8 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+      @categories = Institucion.all
+      @listageneral = @location.hojaderecursos.select(:numeropersonas)
       @recurso_evento = RecursoEvento.new
       #@recurso_evento.location = @location
       @hash = Gmaps4rails.build_markers(@location) do |locations, marker|

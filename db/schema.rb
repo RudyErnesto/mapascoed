@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200917203307) do
+ActiveRecord::Schema.define(version: 20201126141342) do
 
   create_table "funcionarios", force: :cascade do |t|
     t.string "nombre"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20200917203307) do
     t.index ["institucion_id"], name: "index_funcionarios_on_institucion_id"
     t.index ["institucions_id"], name: "index_funcionarios_on_institucions_id"
     t.index ["user_id"], name: "index_funcionarios_on_user_id"
+  end
+
+  create_table "has_recursos", force: :cascade do |t|
+    t.integer "hojaderecurso_id"
+    t.integer "institucion_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hojaderecurso_id"], name: "index_has_recursos_on_hojaderecurso_id"
+    t.index ["institucion_id"], name: "index_has_recursos_on_institucion_id"
   end
 
   create_table "hojaderecursos", force: :cascade do |t|
@@ -97,6 +106,12 @@ ActiveRecord::Schema.define(version: 20200917203307) do
     t.string "gradoycargo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "location_id"
+    t.integer "locations_id"
+    t.index ["location_id"], name: "index_hojaderecursos_on_location_id"
+    t.index ["locations_id"], name: "index_hojaderecursos_on_locations_id"
+    t.index ["user_id"], name: "index_hojaderecursos_on_user_id"
   end
 
   create_table "institucions", force: :cascade do |t|
