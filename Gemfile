@@ -12,7 +12,7 @@ gem 'sqlite3', group: [:development, :test]
 gem 'geocoder'
 gem 'gmaps4rails'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 4.3'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # Use SCSS for stylesheets
